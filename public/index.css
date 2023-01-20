@@ -13,15 +13,14 @@ body {
 
 .linkedIn {
   margin: 0;
-  filter: saturate(1);
   filter: opacity(80%);
-  filter: invert(50%);
+
 }
 
 .linkedIn:hover {
   transition: all 0.2;
-  filter: blur(1px);
-  filter: invert(10%);
+  filter: opacity(100%);
+
 }
 
 .grid {
