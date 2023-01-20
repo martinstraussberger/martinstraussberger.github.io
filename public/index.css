@@ -8,6 +8,20 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   margin: 0 auto;
+  color: #fff;
+}
+
+img.linkedIn {
+  margin: 0;
+  filter: saturate(1);
+  filter: opacity(80%);
+  filter: invert(50%);
+}
+
+.linkedIn:hover {
+  transition: all 0.2;
+  filter: blur(1px);
+  filter: invert(10%);
 }
 
 .grid {
@@ -17,16 +31,23 @@ body {
   align-content: center;
 }
 
+._text {
+  text-align: center;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
 .flex {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem;
 }
 
 ._title {
-  text-align: center;
-  font-weight: 500;
-  font-size: 2rem;
-  color: #fff;
-}
+    font-size: 2rem;
+  }
+  
+  ._content {
+    font-size: 1.5rem;
+  }
+  
