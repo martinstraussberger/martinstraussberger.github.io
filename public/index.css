@@ -11,10 +11,10 @@ body {
 }
 
 .grid {
-    display: grid;
-    height: 100vh;
-    justify-content: center;
-    align-content: center;
+  display: grid;
+  height: 100vh;
+  justify-content: center;
+  align-content: center;
 }
 
 .flex {
@@ -25,6 +25,7 @@ body {
 }
 
 ._title {
+  text-align: center;
   font-weight: 500;
   font-size: 2rem;
   color: #fff;
