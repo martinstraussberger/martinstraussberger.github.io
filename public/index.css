@@ -11,7 +11,7 @@ body {
   color: #fff;
 }
 
-img.linkedIn {
+.linkedIn {
   margin: 0;
   filter: saturate(1);
   filter: opacity(80%);
