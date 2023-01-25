@@ -4,36 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./faviconfavicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-      <link rel="manifest" href="/site.webmanifest">
-      <meta name="msapplication-config" content="/browserconfig.xml" />
-      <meta name="msapplication-TileColor" content="#00000">
-  <meta name="theme-color" content="#00000">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./faviconfavicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="msapplication-TileColor" content="#00000" />
+    <meta name="theme-color" content="#00000" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,500;1,600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/public/index.css" />
+    <link rel="stylesheet" href="./public/css/index.css" />
+    <link rel="stylesheet" href="./public/css/navbar.css" />
+    <link rel="stylesheet" href="./public/css/icons.css" />
     <title>Martin Straussberger</title>
   </head>
   <body>
+    <nav>
+      <div class="navbar">
+          <a>
+            <img
+              class="icon _github"
+              style="color: #fff"
+              src="/public/images/icons/github-logo.png"
+              width="43px"
+              alt="github"
+            />
+          </a>
+        <ul class="nav">
+          <li id="nav-links"><a href="./about.html">About</a></li>
+          <li id="nav-links">
+            <a class="header-link" href="./criteria.html">Projects</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <section class="grid _text">
       <div class="flex _title">
         <h1>Some Magic is happening here</h1>
       </div>
       <div class="_content flex">
         <p>Get in touch</p>
-        <a href="https://linkedin.com/in/martinstraussberger">
-          <img
-            class="linkedIn"
-            src="/public/images/linkedin.png"
-            width="43px"
-            alt="linkedIn"
-          />
-        </a>
+        <div class="avatar">
+          <a target="_blank" href="https://linkedin.com/in/martinstraussberger">
+            <img
+              class="_avatarImage"
+              src="./public/images/profile/profile.jpg"
+              alt="profile"
+            />
+          </a>
+        </div>
       </div>
     </section>
     <footer class="footer flex">
@@ -52,8 +74,6 @@
         A place where design and functionality are null <br />
         So let us all give thanks to those who create <br />
         The websites that make our browsing so great!
-        <br>
-        <i>Props to ChatGPT</i>
       </p>
     </footer>
   </body>
