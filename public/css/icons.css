@@ -1,9 +1,19 @@
 .icon {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 ._github {
-    border: 1px solid #fff;
-    background: #fff;
-    border-radius: 50%;
+  border: 1px solid #fff;
+  background: #fff;
+  border-radius: 50%;
+}
+
+._linkedIn {
+  margin: 0;
+  filter: opacity(80%);
+}
+
+._linkedIn:hover {
+  transition: all 0.2;
+  filter: opacity(100%);
 }

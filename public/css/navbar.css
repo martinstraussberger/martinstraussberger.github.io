@@ -85,9 +85,13 @@
   .nav-links {
     margin: 0 0 0 1rem;
   }
-  
+
   ._dropdownButton {
     padding: 3px 0 0 0;
+  }
+
+  ._dropdownTitle {
+    background: var(--primary);
   }
 }
 
@@ -113,7 +117,7 @@
   .dropdown:hover .dropdown-content {
     position: absolute;
     top: 190%;
-    right: 12%;
+    right: 30%;
     background: rgba(34, 34, 34, 0.929);
     border-radius: 8px;
   }
@@ -129,6 +133,10 @@
   outline: none;
   border: none;
   color: var(--secondary);
+}
+
+._dropdownTitle {
+  padding: 0 0 0 7px;
 }
 
 .dropdown-content {

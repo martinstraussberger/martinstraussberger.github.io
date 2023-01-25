@@ -18,23 +18,12 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
 }
 
 ._avatarImage {
   height: 210px;
   width: 210px;
   border-radius: 50%;
-}
-
-.linkedIn {
-  margin: 0;
-  filter: opacity(80%);
-}
-
-.linkedIn:hover {
-  transition: all 0.2;
-  filter: opacity(100%);
 }
 
 .grid {
