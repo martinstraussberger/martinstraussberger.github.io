@@ -1,5 +1,5 @@
-.upperCase{
-    text-transform: uppercase;
+.upperCase {
+  text-transform: uppercase;
 }
 
 @media (max-width: 480px) {
@@ -87,14 +87,32 @@ a {
 
 @media (min-width: 800px) {
   #nav-links {
-    padding: 40px;
+    margin: 0 0 0 1rem;
   }
 }
 
 @media (min-width: 300px) and (max-width: 600px) {
   #nav-links {
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
+  }
+
+  .dropdown-content a {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  ._dropdownButton {
+    font-size: 13px;
+    margin: 0 0 0 0.6rem;
+  }
+
+  .dropdown:hover .dropdown-content {
+    position: absolute;
+    top: 190%;
+    right: 12%;
+    background: rgba(34, 34, 34, 0.929);
+    border-radius: 8px;
   }
 }
 
@@ -107,7 +125,6 @@ a {
   background: #0000;
   outline: none;
   color: white;
-  font-size: 18px;
   border: none;
 }
 
@@ -127,14 +144,14 @@ a {
 }
 
 .dropdown:hover ._dropdownButton {
-    background: linear-gradient(
-      145deg,
-      rgb(70, 67, 111) 0%,
-      rgba(116, 59, 130, 1) 76%,
-      rgba(188, 102, 209, 1) 100%
-    );
+  background: linear-gradient(
+    145deg,
+    rgb(70, 67, 111) 0%,
+    rgba(116, 59, 130, 1) 76%,
+    rgba(188, 102, 209, 1) 100%
+  );
   border-radius: 4px;
-  }
+}
 
 .dropdown-content a:hover {
   background: rgb(2, 0, 36);
@@ -149,8 +166,7 @@ a {
 
 .dropdown:hover .dropdown-content {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   width: max-content;
 }
-
-
