@@ -1,0 +1,9 @@
+.icon {
+    cursor: pointer;
+}
+
+._github {
+    border: 1px solid #fff;
+    background: #fff;
+    border-radius: 50%;
+}
