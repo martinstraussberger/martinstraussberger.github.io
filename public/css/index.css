@@ -3,6 +3,7 @@
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0 auto;
+  /* background: var(--primary); */
   background: #000000;
   background-image: url(../images/triangular2.png);
   background-repeat: no-repeat;

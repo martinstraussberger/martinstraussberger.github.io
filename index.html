@@ -24,26 +24,33 @@
   <body>
     <nav>
       <div class="navbar">
-          <a target="_blank" href="https://github.com/martinstraussberger?tab=repositories">
-            <img
-              class="icon _github"
-              style="color: #fff"
-              src="/public/images/icons/github-logo.png"
-              width="43px"
-              alt="github"
-            />
-          </a>
+        <a target="_blank" href="https://github.com/martinstraussberger?tab=repositories">
+          <img
+            class="icon _github"
+            style="color: #fff"
+            src="/public/images/icons/github-logo.png"
+            width="43px"
+            alt="github"
+          />
+        </a>
         <ul class="nav">
-          <li id="nav-links"><a href="./about.html">About</a></li>
-          <li id="nav-links">
-            <a class="header-link" href="./criteria.html">Projects</a>
+          <li id="nav-links" class="upperCase"><a href="./about.html">About</a></li>
+          <li id="nav-links" class="upperCase">
+            <div class="dropdown">
+              <button class="_dropdownButton upperCase">Projects</button>
+              <div class="dropdown-content">
+                <a target="_blank" href="https://martinstraussberger.dev/nereus-diving-2018">Website: Nereus Diving</a>
+                <a href="#">React: Dashboard</a>
+                <a href="#">Data Science: Brain Waves</a>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
     </nav>
     <section class="grid _text">
       <div class="flex _title">
-        <h1>Some Magic is happening here</h1>
+        <h1>Fullstack | Frontend Engineer </h1>
       </div>
       <div class="_content flex">
         <p>Get in touch</p>
