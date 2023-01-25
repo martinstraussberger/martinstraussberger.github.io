@@ -117,7 +117,7 @@
   .dropdown:hover .dropdown-content {
     position: absolute;
     top: 190%;
-    right: 30%;
+    right: 1%;
     background: rgba(34, 34, 34, 0.929);
     border-radius: 8px;
   }
