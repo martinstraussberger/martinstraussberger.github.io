@@ -3,13 +3,15 @@
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0 auto;
-  /* background: var(--primary); */
-  background: #000000;
+  background: var(--primary);
   background-image: url(../images/triangular2.png);
   background-repeat: no-repeat;
   background-position: center;
-  margin: 0 auto;
-  color: #fff;
+  color: var(--secondary);
+}
+
+a {
+  text-decoration: none;
 }
 
 .avatar {
@@ -63,7 +65,7 @@ body {
 }
 
 ._p-tag {
-  color: rgb(140, 146, 156);
+  color: var( --text-scaled);
   font-size: 1.1rem;
   width: 50%;
 }

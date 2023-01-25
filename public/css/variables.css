@@ -1,7 +1,9 @@
 :root {
     /* theme */
     --primary: #000000;
-
+    --secondary: #fff;
+    --text-scaled: rgb(140, 146, 156);
     /* border */
     --borderRadius-sm: 4px;
+    --borderRadius-md: 8px;
 }

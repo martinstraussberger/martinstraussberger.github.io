@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,500;1,600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./public/css/variables.css" />
     <link rel="stylesheet" href="./public/css/index.css" />
     <link rel="stylesheet" href="./public/css/navbar.css" />
     <link rel="stylesheet" href="./public/css/icons.css" />
@@ -34,12 +35,16 @@
           />
         </a>
         <ul class="nav">
-          <li id="nav-links" class="upperCase"><a href="./about.html">About</a></li>
-          <li id="nav-links" class="upperCase">
+          <li style="padding: 0 0 0 0;"><a class="nav-links upperCase" href="./about.html">About</a></li>
+          <li class="">
             <div class="dropdown">
-              <button id="nav-links" class="_dropdownButton upperCase">Projects</button>
+              <button class="nav-links _dropdownButton upperCase">Projects</button>
               <div class="dropdown-content">
-                <a target="_blank" href="https://martinstraussberger.dev/nereus-diving-2018">Website: Nereus Diving</a>
+                <a
+                  target="_blank"
+                  href="https://martinstraussberger.dev/nereus-diving-2018"
+                  >Website: Nereus Diving</a
+                >
                 <a href="#">React: Dashboard</a>
                 <a href="#">Data Science: Brain Waves</a>
               </div>
@@ -50,7 +55,7 @@
     </nav>
     <section class="grid _text">
       <div class="flex _title">
-        <h1>Fullstack | Frontend Engineer </h1>
+        <h1>Fullstack | Frontend Engineer</h1>
       </div>
       <div class="_content flex">
         <p>Get in touch</p>
