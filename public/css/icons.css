@@ -1,3 +1,20 @@
+.fa-moon {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  .fa-moon {
+    padding: 0;
+  }
+}
+
+@media (min-width: 800px) {
+  .fa-moon {
+    padding: 2px;
+  }
+}
+
 .icon {
   cursor: pointer;
 }

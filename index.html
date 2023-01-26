@@ -13,6 +13,13 @@
     <meta name="msapplication-TileColor" content="#00000" />
     <meta name="theme-color" content="#00000" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,500;1,600&display=swap"
       rel="stylesheet"
     />
@@ -23,23 +30,27 @@
     <title>Martin Straussberger</title>
   </head>
   <body>
-    <nav>
-      <div class="navbar">
-        <a target="_blank" href="https://github.com/martinstraussberger?tab=repositories">
-          <img
-            class="icon _github"
-            style="color: #fff"
-            src="/public/images/icons/github-logo.png"
-            width="43px"
-            alt="github"
-          />
-        </a>
-        <ul class="nav">
-          <li style="padding: 0 0 0 0">
-            <a class="nav-links upperCase" href="./about.html">About</a>
-          </li>
-          <li class="">
-            <div class="dropdown">
+    
+    <section class="auto-grid _text">
+      <nav>
+        <div class="navbar">
+          <a target="_blank" href="https://github.com/martinstraussberger?tab=repositories">
+            <img
+              class="icon _github"
+              style="color: #fff"
+              src="/public/images/icons/github-logo.png"
+              width="43px"
+              alt="github"
+            />
+          </a>
+          <ul class="nav">
+            <li>
+              <i class="fa-solid fa-moon _themeToggle"></i>
+            </li>
+            <li style="padding: 0 0 0 0">
+              <a class="nav-links upperCase" href="./about.html">About</a>
+            </li>
+            <li class="dropdown">
               <button class="nav-links _dropdownButton upperCase">Projects</button>
               <div class="dropdown-content">
                 <span>
@@ -66,18 +77,14 @@
                   <a href="https://github.com/martinstraussberger/healthCalculatorApp"
                     >Health Calculation App</a
                   >
-                  <a href="#"
-                    >Expanse Wallet</a
-                  >
+                  <a href="#">Expanse Wallet</a>
                 </span>
               </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <section class="grid _text">
-      <div class="flex _title">
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="grid-item1 flex _title">
         <h1>Fullstack | Frontend Engineer</h1>
       </div>
       <div class="_content flex">
@@ -93,10 +100,7 @@
         <h4>Martin Straussberger | Freelancer</h4>
         <p>Get in touch</p>
         <div>
-          <a
-            target="_blank"
-            href="https://linkedin.com/in/martinstraussberger"
-          >
+          <a target="_blank" href="https://linkedin.com/in/martinstraussberger">
             <img
               class="icon _linkedIn"
               style="color: #fff"
@@ -107,24 +111,46 @@
           </a>
         </div>
       </div>
+      <footer class="footer flex">
+        <p class="_poem">
+          <b> Frontend Development</b>, the art of code <br />
+          Creating websites that are bold and bestowed <br />
+          Designs that are user-friendly and sleek <br />
+          Making the web a place that's easy to seek <br />
+          <br />
+          Buttons that are clickable, forms that are neat <br />
+          Navigation that's simple, can't be beat <br />
+          Images that are crisp and load fast <br />
+          Making a website truly built to last <br />
+          <br />
+          Without <b>Frontend Developers</b>, the web would be dull <br />
+          A place where design and functionality are null <br />
+          So let us all give thanks to those who create <br />
+          The websites that make our browsing so great!
+        </p>
+      </footer>
     </section>
-    <footer class="footer flex">
-      <p class="_p-tag _text">
-        <b> Frontend Development</b>, the art of code <br />
-        Creating websites that are bold and bestowed <br />
-        Designs that are user-friendly and sleek <br />
-        Making the web a place that's easy to seek <br />
-        <br />
-        Buttons that are clickable, forms that are neat <br />
-        Navigation that's simple, can't be beat <br />
-        Images that are crisp and load fast <br />
-        Making a website truly built to last <br />
-        <br />
-        Without <b>Frontend Developers</b>, the web would be dull <br />
-        A place where design and functionality are null <br />
-        So let us all give thanks to those who create <br />
-        The websites that make our browsing so great!
-      </p>
-    </footer>
   </body>
+  <script>
+    const btn = document.querySelector('._themeToggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme == 'dark') {
+      document.body.classList.toggle('dark-theme');
+    } else if (currentTheme == 'light') {
+      document.body.classList.toggle('light-theme');
+    }
+
+    btn.addEventListener('click', function () {
+      if (prefersDarkScheme.matches) {
+        document.body.classList.toggle('light-theme');
+        var theme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
+      } else {
+        document.body.classList.toggle('dark-theme');
+        var theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+      }
+      localStorage.setItem('theme', theme);
+    });
+  </script>
 </html>
