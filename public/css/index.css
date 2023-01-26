@@ -4,10 +4,7 @@ html {
   font-family: 'Poppins', sans-serif;
   margin: 0 auto;
 }
-body {
-  background-color: black;
-  color: white;
-}
+
 
 body.dark-theme {
   --text-twilight: #e9eaed;
@@ -47,7 +44,7 @@ body {
 
 .dropdown:hover .dropdown-content {
   position: absolute;
-  top: 190%;
+  margin-top: .2rem;
   right: 1%;
   background: var(--dropdown-box-twilight);
   border-radius: 8px;
