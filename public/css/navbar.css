@@ -109,14 +109,6 @@
   .upperCase {
     font-size: 14px;
   }
-
-  .dropdown:hover .dropdown-content {
-    position: absolute;
-    top: 190%;
-    right: 1%;
-    background: var(--dropdown-box-twilight);
-    border-radius: 8px;
-  }
 }
 
 .dropdown {

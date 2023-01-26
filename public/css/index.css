@@ -7,12 +7,12 @@ html {
 
 body.dark-theme {
   --text-twilight: #e9eaed;
-  --dropdown-box-twilight: #000000e0;
+  --dropdown-box-twilight: #363636e0;
   --background-color: #000;
 }
 body {
   --text-twilight: #000;
-  --dropdown-box-twilight: #ffffff;
+  --dropdown-box-twilight: #e9eaede0;
   --background-color: #fff;
 }
 
@@ -24,11 +24,14 @@ a {
   /* defaults to dark theme */
   body {
     --text-twilight: #fff;
+    --dropdown-box-twilight: #363636e0;
+
     --background-color: #000;
   }
 
   body.light-theme {
     --text-twilight: #222;
+    --dropdown-box-twilight: #e9eaede0;
     --background-color: #fff;
   }
 }
@@ -38,6 +41,14 @@ body {
   background-image: url(../images/triangular.png);
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.dropdown:hover .dropdown-content {
+  position: absolute;
+  top: 190%;
+  right: 1%;
+  background: var(--dropdown-box-twilight);
+  border-radius: 8px;
 }
 
 .dropdown-content a {
