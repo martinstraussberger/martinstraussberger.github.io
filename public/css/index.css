@@ -8,9 +8,6 @@ html {
 body.dark-theme {
   --text-twilight: #e9eaed;
   --background-color: #000;
-  background-image: url(../images/triangular.png);
-  background-repeat: no-repeat;
-  background-position: center;
 }
 body {
   --text-twilight: #000;
@@ -36,6 +33,9 @@ a {
 
 body {
   background: var(--background-color);
+  background-image: url(../images/triangular.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .dropdown-content a {
