@@ -1,6 +1,7 @@
 .fa-moon {
   font-size: 24px;
   cursor: pointer;
+
 }
 
 @media (min-width: 300px) and (max-width: 600px) {
