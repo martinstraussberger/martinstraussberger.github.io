@@ -4,6 +4,10 @@ html {
   font-family: 'Poppins', sans-serif;
   margin: 0 auto;
 }
+body {
+  background-color: black;
+  color: white;
+}
 
 body.dark-theme {
   --text-twilight: #e9eaed;
@@ -20,12 +24,10 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  /* defaults to dark theme */
+@media (prefers-color-scheme: light) {
   body {
     --text-twilight: #fff;
     --dropdown-box-twilight: #363636e0;
-
     --background-color: #000;
   }
 

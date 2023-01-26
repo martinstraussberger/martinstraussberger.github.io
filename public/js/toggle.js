@@ -10,11 +10,11 @@ currentTheme ? 'light' : lightTheme;
 btn.addEventListener('click', function () {
   let theme;
   if (prefersDarkScheme.matches) {
-    document.body.classList.toggle('light-theme');
-    theme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
-  } else {
     document.body.classList.toggle('dark-theme');
     theme = document.body.classList.contains('dark-theme') ? 'dark' : 'light';
+  } else {
+    document.body.classList.toggle('light-theme');
+    theme = document.body.classList.contains('light-theme') ? 'light' : 'dark';
   }
   localStorage.setItem('theme', theme);
 });
