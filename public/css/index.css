@@ -7,10 +7,12 @@ html {
 
 body.dark-theme {
   --text-twilight: #e9eaed;
+  --dropdown-box-twilight: #000000e0;
   --background-color: #000;
 }
 body {
   --text-twilight: #000;
+  --dropdown-box-twilight: #ffffff;
   --background-color: #fff;
 }
 
