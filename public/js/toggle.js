@@ -1,11 +1,11 @@
 const btn = document.querySelector('._themeToggle');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-const darkTheme = document.body.classList.toggle('dark-theme');
-const lightTheme = document.body.classList.toggle('light-theme');
+const FifteenDaysOfDark= document.body.classList.toggle('dark-theme');
+const FifteenDaysOfLight = document.body.classList.toggle('light-theme');
 
 const currentTheme = localStorage.getItem('theme');
-currentTheme ? 'dark' : darkTheme;
-currentTheme ? 'light' : lightTheme;
+currentTheme ? 'dark' : FifteenDaysOfDark;
+currentTheme ? 'light' : FifteenDaysOfLight;
 
 btn.addEventListener('click', function () {
   let theme;
