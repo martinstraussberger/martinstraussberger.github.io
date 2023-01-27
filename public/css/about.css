@@ -1,6 +1,7 @@
 .biography {
   margin-top: 6vh;
   text-align: left;
+  margin: 5vh;
   width: 50%;
 }
 
@@ -8,11 +9,9 @@
   .biography {
     width: 100%;
     font-size: 1.125rem;
-
   }
 
   .p-biography {
     padding: 20px;
-
   }
 }
