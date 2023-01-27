@@ -85,6 +85,7 @@ i {
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 1rem;
   }
 
@@ -98,7 +99,12 @@ i {
 }
 
 .grid-item1 {
+  grid-row: 2/3;
   margin-top: 10vh;
+}
+
+.grid-item2 {
+  grid-row: 3/4;
 }
 
 .avatar {
@@ -108,9 +114,10 @@ i {
 }
 
 ._avatarImage {
-  height: 210px;
-  width: 210px;
+  width: 242px;
+  height: 242px;
   border-radius: 50%;
+  object-fit: cover;
 }
 
 .grid {
@@ -132,6 +139,7 @@ i {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 ._title {

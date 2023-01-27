@@ -1,10 +1,25 @@
 <!DOCTYPE html>
+<!-- script-src 'sha256-{navbar} sha256-{profile} sha256-{toggle} sha256-{footer}' 'strict-dynamic'; -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+      default-src 'self'; 
+      img-src 'self'; 
+      child-src 'none'; 
+      style-src 'unsafe-inline' 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css https://fonts.googleapis.com;
+      style-src-elem 'unsafe-inline' 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css https://fonts.googleapis.com;
+      font-src 'unsafe-inline' 'self' fonts.gstatic.com cdnjs.cloudflare.com;
+      script-src 'unsafe-inline' 'self';
+      script-src-elem 'unsafe-inline' 'self';
+      object-src 'none';
+      base-uri 'none';"
+    />
+    <link el="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
@@ -30,114 +45,23 @@
     <title>Martin Straussberger</title>
   </head>
   <body>
+    <script
+      type="module"
+      src="/public/js/components/navbar.js"
+    ></script>
+    <script
+      type="module"
+      src="/public/js/components/profile.js"
+    ></script>
+    <script
+      type="module"
+      src="/public/js/components/footer.js"
+    ></script>
+
     <section class="auto-grid _text">
-      <nav>
-        <div class="navbar">
-          <a
-            target="_blank"
-            href="https://github.com/martinstraussberger?tab=repositories"
-          >
-            <img
-              class="icon _github"
-              style="color: #fff"
-              src="/public/images/icons/github-logo.png"
-              width="43px"
-              alt="github"
-            />
-          </a>
-          <div>
-            <i class="fa-solid fa-moon _themeToggle"></i>
-          </div>
-          <ul class="nav">
-            <li style="padding: 0 0 0 0">
-              <a class="nav-links upperCase" href="./about.html">About</a>
-            </li>
-            <li class="dropdown">
-              <button class="nav-links _dropdownButton upperCase">Projects</button>
-              <div class="dropdown-content">
-                <span>
-                  <h4 class="_dropdownTitle">Without Frameworks</h4>
-                  <a
-                    target="_blank"
-                    href="https://martinstraussberger.dev/nereus-diving-2018"
-                    >Nereus Diving</a
-                  >
-                </span>
-                <span>
-                  <h4 class="_dropdownTitle">React</h4>
-                  <h4 class="_dropdownTitle">Typescript & Co</h4>
-                  <a href="#">Dashboard</a>
-                </span>
-                <span>
-                  <h4 class="_dropdownTitle">Data Science</h4>
-                  <a
-                    target="_blank"
-                    href="https://martinstraussberger.dev/eegbrainwavebook"
-                    >Analyzing Brain Waves</a
-                  >
-                </span>
-                <span>
-                  <h4 class="_dropdownTitle">Flutter</h4>
-                  <a
-                    target="_blank"
-                    href="https://martinstraussberger.dev/health-calculator-app/"
-                    >Health Calculation App</a
-                  >
-                  <a target="_blank" href="https://martinstraussberger.dev/expansewallet"
-                    >Expanse Wallet</a
-                  >
-                </span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div class="grid-item1 flex _title">
-        <h1>Fullstack | Frontend Engineer</h1>
-      </div>
-      <div class="_content flex">
-        <div class="avatar">
-          <a target="_blank" href="https://linkedin.com/in/martinstraussberger">
-            <img
-              class="_avatarImage"
-              src="./public/images/profile/profile.jpg"
-              alt="profile"
-            />
-          </a>
-        </div>
-        <h4>Martin Straussberger | Freelancer</h4>
-        <p>Get in touch</p>
-        <div>
-          <a target="_blank" href="https://linkedin.com/in/martinstraussberger">
-            <img
-              class="icon _linkedIn"
-              style="color: #fff"
-              src="/public/images/icons/linkedin.png"
-              width="43px"
-              alt="github"
-            />
-          </a>
-        </div>
-      </div>
-      <footer class="footer flex">
-        <p class="_poem">
-          <b> Frontend Development</b>, the art of code <br />
-          Creating websites that are bold and bestowed <br />
-          Designs that are user-friendly and sleek <br />
-          Making the web a place that's easy to seek <br />
-          <br />
-          Buttons that are clickable, forms that are neat <br />
-          Navigation that's simple, can't be beat <br />
-          Images that are crisp and load fast <br />
-          Making a website truly built to last <br />
-          <br />
-          Without <b>Frontend Developers</b>, the web would be dull <br />
-          A place where design and functionality are null <br />
-          So let us all give thanks to those who create <br />
-          The websites that make our browsing so great!
-        </p>
-      </footer>
+      <div id="navbar"></div>
+      <div id="profile" class="grid-item1 flex _title"></div>
+      <footer id="footer" class="grid-item2 footer flex"></footer>
     </section>
-    <script src="./public/js/toggle.js"></script>
   </body>
 </html>
