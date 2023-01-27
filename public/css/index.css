@@ -42,6 +42,10 @@ body {
   background-position: center;
 }
 
+body.about-body {
+  background-image: none;
+}
+
 .dropdown:hover .dropdown-content {
   position: absolute;
   margin-top: 0.2rem;
