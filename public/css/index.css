@@ -6,9 +6,9 @@ html {
 }
 
 body.dark-theme {
-  --text-twilight: #e9eaed;
+  --text-twilight: #d0d1d4;
   --dropdown-box-twilight: #363636e0;
-  --background-color: #000;
+  --background-color: #0D1118;
 }
 body {
   --text-twilight: #000;
