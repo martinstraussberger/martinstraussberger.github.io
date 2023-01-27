@@ -1,5 +1,18 @@
 .biography {
-    margin-top: 6vh;
-    text-align: left;
-    width: 50%;
+  margin-top: 6vh;
+  text-align: left;
+  width: 50%;
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+  .biography {
+    width: 100%;
+    font-size: 1.125rem;
+
+  }
+
+  .p-biography {
+    padding: 20px;
+
+  }
 }

@@ -45,18 +45,9 @@
     <title>Martin Straussberger</title>
   </head>
   <body>
-    <script
-      type="module"
-      src="/public/js/components/navbar.js"
-    ></script>
-    <script
-      type="module"
-      src="/public/js/components/profile.js"
-    ></script>
-    <script
-      type="module"
-      src="/public/js/components/footer.js"
-    ></script>
+    <script type="module" src="/public/js/components/navbar.js"></script>
+    <script type="module" src="/public/js/components/profile.js"></script>
+    <script type="module" src="/public/js/components/footer.js"></script>
 
     <section class="auto-grid _text">
       <div id="navbar"></div>
@@ -64,4 +55,7 @@
       <footer id="footer" class="grid-item2 footer flex"></footer>
     </section>
   </body>
+  <script>
+      console.log('index:', localStorage.getItem('theme'));
+  </script>
 </html>

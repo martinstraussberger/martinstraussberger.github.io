@@ -7,12 +7,6 @@ const dropdownItems = {
   flutter: 'Flutter',
 };
 
-const HomeBtn = `
-<a href="./index.html">
-<i class="homeBtn icon fa-solid fa-arrow-left"></i>
-</a>
-`;
-
 const RefGithub = `
   <a
       target="_blank"
@@ -73,9 +67,6 @@ const Navbar = `
   <div class="navbar">
     ${RefGithub}
     <div>
-    ${HomeBtn}
-    </div>
-    <div>
       <i class="icon fa-solid fa-moon _themeToggle"></i>
     </div>
     <ul class="nav">
@@ -88,12 +79,7 @@ const Navbar = `
   </nav>
   `;
 
-window.addEventListener('DOMContentLoaded', async function () {
+window.addEventListener('DOMContentLoaded', function () {
   document.getElementById('navbar').innerHTML = Navbar;
   ThemeMode();
-    console.log(document.location === 'index.html')
-  if(document.location == './index.html') {
-    await document.querySelectorAll('#homeBtn').setAttribute('display', 'none')
-  }
 });
-

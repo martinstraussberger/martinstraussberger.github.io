@@ -1,6 +1,12 @@
+const HomeBtn = `
+<a href="./index.html">
+<i class="homeBtn icon fa-solid fa-arrow-left"> Home</i>
+</a>
+`;
+
 const About = `
 <div class="_content flex biography">
-    <p>
+    <p class="p-biography">
     My journey in Frontend Engineering began during my studies in Mechanical
     Engineering when I discovered my passion for Software Engineering in my second and
     third semesters through a course on Computer Science for Mechanical Engineers. The
@@ -34,6 +40,7 @@ const About = `
     my skills to your business, accelerating the research and development process from
     scratch to a fully functional Application, beyond just an MVP.
     </p>
+    ${HomeBtn}
 </div>
 `;
 
