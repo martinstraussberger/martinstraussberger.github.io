@@ -4,8 +4,9 @@ const HomeBtn = `
 </a>
 `;
 
-const About = `
+const About = ` 
 <div class="_content flex biography">
+    <h2>Bio</h2>
     <p class="p-biography">
     My journey in Frontend Engineering began during my studies in Mechanical
     Engineering when I discovered my passion for Software Engineering in my second and
