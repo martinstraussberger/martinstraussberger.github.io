@@ -5,7 +5,7 @@ const Profile = `<h1>Fullstack | Frontend Engineer</h1>
     <a target="_blank" href="https://linkedin.com/in/martinstraussberger">
       <img
         class="_avatarImage"
-        src="./public/images/profile/profile.jpg"
+        src="./public/images/profile/profile2.jpg"
         alt="profile"
       />
     </a>
