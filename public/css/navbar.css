@@ -125,7 +125,7 @@
 }
 
 ._dropdownTitle {
-  color: var(--text-secondary);
+  color: var(--text-dropdown);
   padding: 0 0 0 7px;
 }
 
