@@ -1,5 +1,5 @@
 const Footer = `
-<p class="_poem">
+<p>
 <b> Frontend Development</b>, the art of code <br />
 Creating websites that are bold and bestowed <br />
 Designs that are user-friendly and sleek <br />

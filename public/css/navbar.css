@@ -125,7 +125,7 @@
 }
 
 ._dropdownTitle {
-  color: rgb(158, 37, 211);
+  color: var(--text-secondary);
   padding: 0 0 0 7px;
 }
 
@@ -136,12 +136,12 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   overflow-x: hidden;
-  transition: transform .0s linear .6s;
+  transition: transform 0s linear 0.6s;
   transform: scale(0);
 }
 
 .dropdown:hover .dropdown-content {
-  transition-delay: .0s;
+  transition-delay: 0s;
   transform: scale(1);
   display: flex;
   flex-wrap: wrap;

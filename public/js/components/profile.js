@@ -10,9 +10,15 @@ const Profile = `<h1>Fullstack | Frontend Engineer</h1>
       />
     </a>
   </div>
-  <h4>Martin Straussberger</h4>
+  <div class="bio-intro">
+    <p>
+      Martin Straussberger | B. Eng
+    </br>
+      Web-Developer with deep focus on Frontend Engineering
+    </p>
+  </div>
   <p>Get in touch</p>
-  <div>
+  <div class="flex">
     <a target="_blank" href="https://linkedin.com/in/martinstraussberger">
       <img
         class="icon _linkedIn"
@@ -22,6 +28,14 @@ const Profile = `<h1>Fullstack | Frontend Engineer</h1>
         alt="github"
       />
     </a>
+    <button class="qr-btn">
+      <img
+        class="icon _qr"
+        src="/public/images/qr-codes/profile-qr.png"
+        width="76px"
+        alt="github"
+      />
+    </button>
   </div>`;
 
   window.addEventListener("DOMContentLoaded", function() {

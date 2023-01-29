@@ -70,6 +70,40 @@ i {
   color: var(--text-twilight);
 }
 
+.bio-intro {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  line-height: 31px;
+}
+
+@media (min-width: 800px) {
+  .bio-intro {
+    padding: 20px;
+    width: 80%;
+  }
+
+  .qr-btn {
+    position: relative;
+    top: 50%;
+    left: 90%;
+    outline: none;
+    border: 1px solid var(--text-secondary-text);
+    border-radius: 12px;
+    background: none;
+  }
+
+  ._qr {
+    border-radius: 10%;
+  }
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .qr-btn {
+    display: none;
+  }
+}
+
 /*------------------------------------*\
   # Grid 
 \*------------------------------------*/
@@ -134,10 +168,6 @@ i {
 
 ._text {
   text-align: center;
-}
-
-._poem  {
-  color: var(--text-scaled);
 }
 
 .flex {
