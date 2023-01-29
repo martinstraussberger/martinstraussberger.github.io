@@ -8,7 +8,8 @@ html {
 body.dark-theme {
   --text-twilight: #d0d1d4;
   --dropdown-box-twilight: #363636e0;
-  --background-color: #0D1118;
+  --background-color: #0d1118;
+  background-image: url(../images/triangular.png);
 }
 body {
   --text-twilight: #000;
@@ -31,13 +32,13 @@ a {
     --text-twilight: #222;
     --dropdown-box-twilight: #e9eaede0;
     --background-color: #fff;
+    background-image: none;
   }
 }
 
 body {
   transition: background-color 1s;
   background: var(--background-color);
-  background-image: url(../images/triangular.png);
   background-repeat: no-repeat;
   background-position: center;
 }
