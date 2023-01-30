@@ -37,7 +37,7 @@ const Dropdown = `
     <span>
       <h4 class="_dropdownTitle">${dropdownItems.react}</h4>
       <h4 class="_dropdownTitle">${dropdownItems.typescript}</h4>
-      <a href="#">Dashboard</a>
+      <a href="https://martinstraussberger.dev/reduxdashboard">Dashboard</a>
     </span>
     <span>
       <h4 class="_dropdownTitle">${dropdownItems.dataScience}</h4>
