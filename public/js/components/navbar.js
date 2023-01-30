@@ -1,8 +1,7 @@
 import { Toggle as ThemeMode } from '../toggle.js';
 
 const dropdownItems = {
-  react: 'React',
-  typescript: 'TypeScript & Co',
+  react: 'React, TypeScript & Co.',
   dataScience: 'R&D - Data Science',
   flutter: 'Flutter',
 };
@@ -36,8 +35,7 @@ const Dropdown = `
     </span>
     <span>
       <h4 class="_dropdownTitle">${dropdownItems.react}</h4>
-      <h4 class="_dropdownTitle">${dropdownItems.typescript}</h4>
-      <a href="https://martinstraussberger.dev/reduxdashboard">Dashboard</a>
+      <a href="https://martinstraussberger.dev/reduxdashboard">Redux - Dashboard</a>
     </span>
     <span>
       <h4 class="_dropdownTitle">${dropdownItems.dataScience}</h4>
