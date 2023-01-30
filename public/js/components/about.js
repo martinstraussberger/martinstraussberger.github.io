@@ -28,7 +28,7 @@ const About = `
     The program's hands-on approach, working with
     corporate partners and completing 15-week projects per semester, deepened my
     knowledge and expertise, particularly in Frontend Engineering using technologies
-    such as React, Typescript, MongoDB, CSS, SCSS, and HTML. 
+    such as React, Typescript, MongoDB, Node.js, CSS, SCSS, and HTML. 
     </br>
     </br>
     Over the past two years,
