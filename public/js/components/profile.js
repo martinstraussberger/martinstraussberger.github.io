@@ -2,13 +2,11 @@ const Profile = `<h1>Fullstack | Frontend Engineer</h1>
 </div>
 <div class="_content flex">
   <div class="avatar">
-    <a target="_blank" href="https://linkedin.com/in/martinstraussberger">
       <img
         class="_avatarImage"
         src="./public/images/profile/profile2.jpg"
         alt="profile"
       />
-    </a>
   </div>
   <div class="bio-intro">
     <p>
