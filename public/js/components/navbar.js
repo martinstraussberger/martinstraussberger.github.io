@@ -35,15 +35,18 @@ const Dropdown = `
     </span>
     <span>
       <h4 class="_dropdownTitle">${dropdownItems.react}</h4>
-      <a href="https://martinstraussberger.dev/reduxdashboard">Redux - Dashboard</a>
+      <a
+        target="_blank"
+        href="https://martinstraussberger.dev/reduxdashboard">Redux - Dashboard
+      </a>
     </span>
     <span>
       <h4 class="_dropdownTitle">${dropdownItems.dataScience}</h4>
       <a
         target="_blank"
         href="https://martinstraussberger.dev/eegbrainwavebook"
-        >Analyzing Brain Waves</a
-      >
+        >Analyzing Brain Waves
+      </a>
     </span>
     <span>
       <h4 class="_dropdownTitle">${dropdownItems.flutter}</h4>
