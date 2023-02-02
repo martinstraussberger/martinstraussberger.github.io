@@ -39,6 +39,10 @@ const Dropdown = `
         target="_blank"
         href="https://martinstraussberger.dev/reduxdashboard">Redux - Dashboard
       </a>
+      <a
+      target="_blank"
+      href="https://martinstraussberger.dev/prototype-react-d3js-chart">React & D3.js - Chart
+    </a>
     </span>
     <span>
       <h4 class="_dropdownTitle">${dropdownItems.dataScience}</h4>
