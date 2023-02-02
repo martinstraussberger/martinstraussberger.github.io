@@ -5,8 +5,8 @@ const HomeBtn = `
 `;
 
 const PersonalDevelopment = `
-<h1>Shot of Awe how I approach my Goals</h1>
-<p>
+<h1>How I approach my Goals</h1>
+<p class="p-biography">
   As a fan of personal development, I firmly believe investing a couple of hours per day into ourselves is crucial. 
   After all, it's time to take control of our lives and not let our inner temptations play the game for us. 
   That's why I've created a Timeboxing Model that's free, accessible, and built with HTML and CSS, 
@@ -29,7 +29,7 @@ const PersonalDevelopment = `
   </br>
 
   <h4>In short, what is Timeboxing?</h4>
-  <p>
+  <p class="p-biography">
     Timeboxing is a time management technique where a specific amount of time is allocated for a task or activity. The goal is to increase focus and productivity. 
     A Timeboxing Model involves setting clear, achievable goals for each cluster and sticking to the designated time frame. A cluster is called Timeslot. 
     It helps to prioritize tasks and manage time more effectively, reducing the risk of procrastination and distractions. Additionally, regularly reviewing and 
