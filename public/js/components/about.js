@@ -7,7 +7,7 @@ const HomeBtn = `
 const PersonalDevelopment = `
 <h1>Shot of Awe how I approach my Goals</h1>
 <p>
-  As a fan of personal development, I firmly believe investing a couple of hours into ourselves is crucial. 
+  As a fan of personal development, I firmly believe investing a couple of hours per day into ourselves is crucial. 
   After all, it's time to take control of our lives and not let our inner temptations play the game for us. 
   That's why I've created a Timeboxing Model that's free, accessible, and built with HTML and CSS, 
   so you too can harness the power of time management. They say time is money, but I say it's worth even more. 
