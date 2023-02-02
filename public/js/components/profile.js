@@ -10,12 +10,10 @@ const Profile = `<h1>Fullstack | Frontend Engineer</h1>
   </div>
   <div class="bio-intro">
     <p>
-      Martin Straussberger | B. Eng
-    </br>
-      Web-Developer with deep focus on Frontend Engineering
+      B. Eng | Martin Straussberger
     </p>
   </div>
-  <p>Get in touch</p>
+  <h5>Get in Touch</h5>
   <button class="qr-btn">
     <img
       class="icon _qr"

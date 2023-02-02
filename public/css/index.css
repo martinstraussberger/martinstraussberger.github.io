@@ -74,14 +74,13 @@ i {
 .bio-intro {
   display: flex;
   text-align: center;
-  flex-direction: column;
+  flex-direction: row;
   line-height: 31px;
 }
 
 @media (min-width: 800px) {
   .bio-intro {
     padding: 20px;
-    width: 80%;
   }
 
   .qr-btn {
