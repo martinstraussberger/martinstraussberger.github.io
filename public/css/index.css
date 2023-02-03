@@ -73,13 +73,11 @@ i {
 
 .horizontal-line {
   color: var(--text-twilight);
+  width: 80%;
+
 }
 
 @media (min-width: 800px) {
-  .horizontal-line {
-    width: 100%;
-  }
-  
   .qr-btn {
     position: fixed;
     top: 50%;
@@ -96,10 +94,6 @@ i {
 }
 
 @media (min-width: 300px) and (max-width: 768px) {
-  .horizontal-line {
-    width: 80%;
-  }
-
   .qr-btn {
     display: none;
   }
