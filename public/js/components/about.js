@@ -52,7 +52,7 @@ const PreviewTimeBoxing = `
 const About = ` 
 <div class="_content flex biography">
     <h2>Bio</h2>
-    <h4>Martin Straussberger born in Nuremberg, Germany</h4>
+    <h4 class="contrast-darkMode">Martin Straussberger born in Nuremberg, Germany</h4>
     <div>
     <p class="p-biography">
     I have always been driven by a passion for technology and creativity. As a Web and Mobile Developer, I am constantly inspired by the possibilities of the digital world. 

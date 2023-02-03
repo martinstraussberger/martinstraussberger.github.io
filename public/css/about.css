@@ -23,3 +23,10 @@
     transition: 0.5s ease-in-out;
   }
 }
+
+.contrast-darkMode {
+  background: white;
+  color: black;
+  padding: 8px;
+  border-radius: 12px;
+}
