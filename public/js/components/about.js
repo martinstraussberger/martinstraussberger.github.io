@@ -51,13 +51,15 @@ const PreviewTimeBoxing = `
 const About = ` 
 <div class="_content flex biography">
     <h2>Bio</h2>
-    <div class="bio-intro">
-    <p>
-      Martin Straussberger | B. Eng
-    </br>
-      Web-Developer with deep focus on Frontend Engineering
+    <div>
+    <p class="p-biography">
+    I have always been driven by a passion for technology and creativity. As a Web and Mobile Developer, I am constantly inspired by the possibilities of the digital world. 
+    With a strong belief in the power of Design Thinking and User Research, I have sharpened my skills over the past three years by creating Design Systems and building my 
+    personal component library using Storybook to iterate faster through reusable and existing component concepts. I am eager to bring my passion and expertise to the forefront 
+    and make a meaningful impact through my work.
     </p>
     </div>
+    <hr class="horizontal-line">
     <p class="p-biography">
     My journey in Frontend Engineering began during my studies in Mechanical
     Engineering when I discovered my passion for Software Engineering in my second and

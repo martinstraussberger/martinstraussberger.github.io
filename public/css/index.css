@@ -71,18 +71,15 @@ i {
   color: var(--text-twilight);
 }
 
-.bio-intro {
-  display: flex;
-  text-align: center;
-  flex-direction: row;
-  line-height: 31px;
+.horizontal-line {
+  color: var(--text-twilight);
 }
 
 @media (min-width: 800px) {
-  .bio-intro {
-    padding: 20px;
+  .horizontal-line {
+    width: 100%;
   }
-
+  
   .qr-btn {
     position: fixed;
     top: 50%;
@@ -99,6 +96,10 @@ i {
 }
 
 @media (min-width: 300px) and (max-width: 768px) {
+  .horizontal-line {
+    width: 80%;
+  }
+
   .qr-btn {
     display: none;
   }
