@@ -42,7 +42,7 @@ const PersonalDevelopment = `
 const PreviewTimeBoxing = `
 <div class="flex">
 <h4>Preview</h4>
-  <a>
+  <a class="timeboxing-preview">
     <img src="../public/images/PreviewTimeBoxing.jpg" width="290px" height="490px"
   </a>  
   <a target="_blank" href="./public/pdf/timeBoxingTemplate.pdf"><b>PDF</b></a>

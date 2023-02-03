@@ -113,7 +113,7 @@
 
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 ._dropdownButton {
@@ -130,22 +130,30 @@
 }
 
 .dropdown-content {
+  height: 295px;
+}
+
+.dropdown-content {
   display: none;
   position: absolute;
   text-align: left;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  overflow-x: hidden;
+  overflow: auto;
   transition: transform 0s linear 0.6s;
   transform: scale(0);
 }
 
+.dropdown-content li {
+  text-decoration: none;
+  list-style: none;
+}
+
 .dropdown:hover .dropdown-content {
+  display: block;
   transition-delay: 0s;
   transform: scale(1);
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  overflow: auto;
   width: max-content;
   padding: 6px 6px 0 0;
   cursor: pointer;
