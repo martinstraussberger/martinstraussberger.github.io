@@ -11,6 +11,12 @@
     font-size: 1.125rem;
   }
 
+  .contrast-darkMode {
+    width: 90%;
+    font-size: 1rem;
+
+  }
+
   .p-biography {
     padding: 20px;
   }
@@ -22,10 +28,18 @@
     transform: scale(1.5);
     transition: 0.5s ease-in-out;
   }
+
+  .contrast-darkMode {
+    font-size: 1.2rem;
+  }
 }
 
 .contrast-darkMode {
+  display: flex;
+  flex-direction: row;
   background: white;
+  text-align: center;
+  align-items: center;
   color: black;
   padding: 8px;
   border-radius: 12px;
