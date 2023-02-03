@@ -16,14 +16,15 @@ const PersonalDevelopment = `
   with the help of the Timeboxing concept. 
 
   </br>
-
   I can personally attest to its effectiveness and its positive impact on my daily goals and life aspirations. 
   For example, building this website and rescuing a lost puppy from Morocco were two monumental tasks while working full-time. 
-  We fought and organized for five months to bring him to Germany, undergo the blood test procedures, and satisfy all government requirements. 
-  So why not give it a shot? 🚀 
-  
+  We fought and organized for five months bringing the puppy to Germany, undergo the blood test procedures, and satisfy all government requirements. 
+  To sum up, we do not regret our decision, despite the bunch of work and obstacles.
   </br>
-
+  </br> 
+    So why not give it a shot? 🚀 
+  </br>
+  </br> 
   The first challenge is sticking to it, but trust me, it's worth it. After all, the only thing standing between you 
   and your dreams is the time you choose to invest in yourself." 🙃
   </br>
@@ -51,6 +52,7 @@ const PreviewTimeBoxing = `
 const About = ` 
 <div class="_content flex biography">
     <h2>Bio</h2>
+    <h4>Martin Straussberger born in Nuremberg, Germany</h4>
     <div>
     <p class="p-biography">
     I have always been driven by a passion for technology and creativity. As a Web and Mobile Developer, I am constantly inspired by the possibilities of the digital world. 
