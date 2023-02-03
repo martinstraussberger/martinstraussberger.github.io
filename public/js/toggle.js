@@ -6,11 +6,9 @@ const Toggle = () => {
   const AddFifteenDaysOfLight = document.body.classList.add('light-theme');
 
   if (currentTheme === 'dark') {
-    console.log('index if:', localStorage.getItem('theme'));
     document.body.classList.remove('light-theme');
     AddFifteenDaysOfDarkness;
   } else {
-    console.log('index else if:', localStorage.getItem('theme'));
     document.body.classList.remove('dark-theme');
     AddFifteenDaysOfLight;
   }
