@@ -148,8 +148,6 @@ i {
 }
 
 ._avatarImage {
-  width: 242px;
-  height: 242px;
   border-radius: 50%;
   object-fit: cover;
 }
