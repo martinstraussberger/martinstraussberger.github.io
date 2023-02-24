@@ -8,7 +8,7 @@ html {
 body.dark-theme {
   --text-twilight: #d0d1d4;
   --dropdown-box-twilight: #363636e0;
-  --background-color: #0d1118;
+  --background-color: #23272E;
   background-image: url(../images/triangular.png);
 }
 body {
