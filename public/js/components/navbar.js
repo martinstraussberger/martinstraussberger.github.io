@@ -33,6 +33,9 @@ const Dropdown = `
     </li>
     <li>
       <h4 class='_dropdownTitle'>${dropdownItems.react}</h4>
+      <a target='_blank' href='https://ms-mern.herokuapp.com'>
+        MERN - Fullstack App
+      </a>
       <a target='_blank' href='https://martinstraussberger.dev/reduxdashboard'>
         Redux - Dashboard
       </a>
@@ -84,7 +87,8 @@ window.addEventListener('DOMContentLoaded', function () {
   ThemeMode();
 });
 
-{/* <li class='dropdown'>
+{
+  /* <li class='dropdown'>
   <button class='nav-links _dropdownButton upperCase'>Projects</button>
   <ul class='dropdown-content'>
     <li>
@@ -121,4 +125,5 @@ window.addEventListener('DOMContentLoaded', function () {
       </a>
     </li>
   </ul>
-</li>; */}
+</li>; */
+}
