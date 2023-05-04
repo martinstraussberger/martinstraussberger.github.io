@@ -12,7 +12,7 @@ const Profile = `<h1>Fullstack | Frontend Engineer</h1>
   </div>
   <div class="bio-intro">
     <p>
-      B. Eng | Martin Straussberger
+      B. Eng | B. Sc | Martin Straussberger
     </p>
   </div>
   <h5>Get in Touch</h5>
