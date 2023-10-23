@@ -1,4 +1,5 @@
-const Profile = `<h1>Fullstack | Frontend Engineer</h1>
+const Profile = `
+<h1>Teamlead - Web @Calimoto | Senior Fullstack | Frontend Engineer</h1>
 </div>
 <div class="_content flex">
   <div class="avatar">
