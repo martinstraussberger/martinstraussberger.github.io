@@ -1,5 +1,8 @@
 const Profile = `
-<h1>Teamlead - Web @Calimoto | Senior Fullstack | Frontend Engineer</h1>
+<div class="header">
+    <div>Web Team Lead - Calimoto GmbH</div>
+    <div>Senior Fullstack Engineer</div>
+</div>
 </div>
 <div class="_content flex">
   <div class="avatar">
