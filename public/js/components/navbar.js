@@ -33,7 +33,7 @@ const Dropdown = `
     </li>
     <li>
       <h4 class='_dropdownTitle'>${dropdownItems.react}</h4>
-      <a target='_blank' href='https://martinstraussberger.dev/diary-app/'>
+      <a target='_blank' href='https://martinstraussberger.dev/diaryApp'>
         Diary App
       </a>
       <a target='_blank' href='https://ms-mern.herokuapp.com'>
