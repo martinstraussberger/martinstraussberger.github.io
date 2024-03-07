@@ -77,6 +77,15 @@ i {
 
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    font-size: 32px;
+    padding: 12px;
+    color: var(--text-twilight);
+
+}
+
 @media (min-width: 800px) {
   .qr-btn {
     position: fixed;
