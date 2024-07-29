@@ -8,7 +8,7 @@ const Profile = `
   <div class="avatar">
       <img
         class="_avatarImage"
-        src="./public/images/profile/profile2.jpg"
+        src="./public/images/profile/profile-img.jpg"
         width="242px" 
         height="242px
         alt="profile"

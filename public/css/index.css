@@ -158,7 +158,7 @@ i {
 
 ._avatarImage {
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: inherit;
 }
 
 .grid {
