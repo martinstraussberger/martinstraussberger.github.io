@@ -1,7 +1,6 @@
 const Profile = `
 <div class="header">
-    <div>Web Team Lead - Calimoto GmbH</div>
-    <div>Senior Fullstack Engineer</div>
+    <div>Head of Web Engineering - Calimoto GmbH</div>
 </div>
 </div>
 <div class="_content flex">
@@ -16,20 +15,13 @@ const Profile = `
   </div>
   <div class="bio-intro">
     <p>
-      B. Eng | B. Sc | Martin Straussberger
+      Driving Impact Through Neuroscience for Leadership & Teams 🚀 
+    </p>
+    <p>
+      Vision-Driven Product Engineering
     </p>
   </div>
-  <h5>Get in Touch</h5>
-  <button class="qr-btn">
-    <img
-      class="icon _qr"
-      src="/public/images/qr/profileQr.png"
-      width="76px"
-      height="76px"
-      alt="profileqr"
-    />
-  </button>
-  <div class="flex">
+    <button class="linkedIn-btn">
     <a target="_blank" href="https://linkedin.com/in/martinstraussberger">
       <img
         class="icon _linkedIn"
@@ -40,6 +32,8 @@ const Profile = `
         alt="github"
       />
     </a>
+    />
+  </button>
   </div>`;
 
 window.addEventListener('DOMContentLoaded', function () {

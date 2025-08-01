@@ -1,21 +1,33 @@
-const Footer = `
-<p>
-  <b> Frontend Development</b>, the art of code <br />
-  Creating websites that are bold and bestowed <br />
-  Designs that are user-friendly and sleek <br />
-  Making the web a place that's easy to seek <br />
-  <br />
-  Buttons that are clickable, forms that are neat <br />
-  Navigation that's simple, can't be beat <br />
-  Images that are crisp and load fast <br />
-  Making a website truly built to last <br />
-  <br />
-  Without <b>Frontend Developers</b>, the web would be dull <br />
-  A place where design and functionality are null <br />
-  So let us all give thanks to those who create <br />
-  The websites that make our browsing so great!
-</p>`;
+let Footer;
 
-window.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('footer').innerHTML = Footer;
-  });
+async function loadFooterContent() {
+  try {
+    const markdownContent = await SimpleMarkdownParser.loadAndParse('./public/markdown/footer.md');
+
+    if (markdownContent) {
+      Footer = markdownContent;
+      console.log('Footer markdown loaded successfully');
+    } else {
+      console.log('Footer markdown returned null, using fallback');
+      Footer = FooterFallback;
+    }
+  } catch (error) {
+    console.error('Footer markdown loading failed, using fallback:', error);
+    Footer = FooterFallback;
+  }
+
+  // Render the footer
+  const footerElement = document.getElementById('footer');
+  if (footerElement) {
+    // Store existing classes before setting innerHTML
+    const existingClasses = footerElement.className;
+    footerElement.innerHTML = Footer;
+
+    // Restore the original classes to ensure grid-item2 footer flex are maintained
+    footerElement.className = existingClasses;
+  } else {
+    console.error('Footer element not found');
+  }
+}
+
+window.addEventListener("DOMContentLoaded", loadFooterContent);

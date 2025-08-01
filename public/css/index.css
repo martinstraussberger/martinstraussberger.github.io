@@ -9,6 +9,7 @@ body.dark-theme {
   --text-twilight: #d0d1d4;
   --dropdown-box-twilight: #363636e0;
   --background-color: #23272E;
+  --text-dawn: #FF3D81;
   background-image: url(../images/triangular.png);
 }
 body {
@@ -80,14 +81,14 @@ i {
 .header {
     display: flex;
     flex-direction: column;
-    font-size: 32px;
+    font-size: 2rem;
     padding: 12px;
     color: var(--text-twilight);
 
 }
 
 @media (min-width: 800px) {
-  .qr-btn {
+  .linkedIn-btn {
     position: fixed;
     top: 50%;
     left: 90%;
@@ -97,13 +98,13 @@ i {
     background: none;
   }
 
-  ._qr {
+  ._linkedIn {
     border-radius: 10%;
   }
 }
 
 @media (min-width: 300px) and (max-width: 768px) {
-  .qr-btn {
+  .linkedIn-btn {
     display: none;
   }
 }
@@ -185,9 +186,18 @@ i {
   font-size: 2rem;
 }
 
+.bio-intro {
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+
+}
+
 ._content {
   flex-direction: column;
   font-size: 1.5rem;
+  color: var(--text-twilight);
 }
 
 ._p-tag {
@@ -196,5 +206,34 @@ i {
 }
 
 .footer {
-  margin: 0 0 5vh 0;
+  margin: 0 auto 5vh auto;
+  max-width: 680px;
+  width: 100%;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Responsive footer adjustments */
+@media (max-width: 768px) {
+  .footer {
+    max-width: 90%;
+    padding: 0 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    max-width: 95%;
+    padding: 1rem;
+  }
+}
+
+/* Ensure footer content is properly spaced */
+.footer p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  text-align: left;
+  font-weight: 400;
 }

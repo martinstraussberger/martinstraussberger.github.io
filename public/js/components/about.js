@@ -4,105 +4,75 @@ const HomeBtn = `
 </a>
 `;
 
-const PersonalDevelopment = `
-<h1>How I approach my Goals</h1>
-<p class="p-biography">
-  As a fan of personal development, I firmly believe investing a couple of hours per day into ourselves is crucial. 
-  After all, it's time to take control of our lives and not let our inner temptations play the game for us. 
-  That's why I've created a Timeboxing Model that's free, accessible, and built with HTML and CSS, 
-  so you too can harness the power of time management. They say time is money, but I say it's worth even more. 
-  Every hour that passes without valuing it is a lost opportunity. An hour lost is not just a missed opportunity 
-  but a depletion of the precious and limited time we have on this unique planet. So, let's make the most of every minute 
-  with the help of the Timeboxing concept. 
-
-  </br>
-  I can personally attest to its effectiveness and its positive impact on my daily goals and life aspirations. 
-  For example, building this website and rescuing a lost puppy from Morocco were two monumental tasks while working full-time. 
-  We fought and organized for five months bringing the puppy to Germany, undergo the blood test procedures, and satisfy all government requirements. 
-  To sum up, we do not regret our decision, despite the bunch of work and obstacles.
-  </br>
-  </br> 
-    So why not give it a shot? 🚀 
-  </br>
-  </br> 
-  The first challenge is sticking to it, but trust me, it's worth it. After all, the only thing standing between you 
-  and your dreams is the time you choose to invest in yourself." 🙃
-  </br>
-
-  <h4>In short, what is Timeboxing?</h4>
-  <p class="p-biography">
-    Timeboxing is a time management technique where a specific amount of time is allocated for a task or activity. The goal is to increase focus and productivity. 
-    A Timeboxing Model involves setting clear, achievable goals for each cluster and sticking to the designated time frame. A cluster is called Timeslot. 
-    It helps to prioritize tasks and manage time more effectively, reducing the risk of procrastination and distractions. Additionally, regularly reviewing and 
-    adjusting the time allocations can lead to continuous improvement and optimization of the model and your mindset.
-  </p>
-</p>
-`;
-
 const PreviewTimeBoxing = `
 <div class="flex">
 <h4>Preview</h4>
   <a class="timeboxing-preview">
-    <img src="../public/images/PreviewTimeBoxing.jpg" width="290px" height="490px"
+    <img src="../public/images/PreviewTimeBoxing.jpg" width="290px" height="490px" alt="Timeboxing Preview">
   </a>  
   <a target="_blank" href="./public/pdf/timeBoxingTemplate.pdf"><b>PDF</b></a>
 </div>
-`
-
-const About = ` 
-<div class="_content flex biography">
-    <h2>Bio</h2>
-    <h4 class="contrast-darkMode">Martin Straussberger born in Nuremberg, Germany</h4>
-    <div>
-    <p class="p-biography">
-    I have always been driven by a passion for technology and creativity. As a Web and Mobile Developer, I am constantly inspired by the possibilities of the digital world. 
-    With a strong belief in the power of Design Thinking and User Research, I have sharpened my skills over the past three years by creating Design Systems and building my 
-    personal component library using Storybook to iterate faster through reusable and existing component concepts. I am eager to bring my passion and expertise to the forefront 
-    and make a meaningful impact through my work.
-    </p>
-    </div>
-    <hr class="horizontal-line">
-    <p class="p-biography">
-    My journey in Frontend Engineering began during my studies in Mechanical
-    Engineering when I discovered my passion for Software Engineering in my second and
-    third semesters through a course on Computer Science for Mechanical Engineers. The
-    first project I worked on, an "Automated Ant Game," sparked my interest in Web
-    Development. 
-    To further develop my skills, I took several online courses on Udemy,
-    and upon completing my studies, I enrolled in Software Engineering at the Code
-    University of Applied Sciences. 
-    </br>
-    </br>
-    The program's hands-on approach, working with
-    corporate partners and completing 15-week projects per semester, deepened my
-    knowledge and expertise, particularly in Frontend Engineering using technologies
-    such as React, Typescript, MongoDB, Node.js, CSS, SCSS, and HTML. 
-    </br>
-    </br>
-    Over the past two years,
-    I have put my skills into practice by working for a company called ehealth-tec
-    GmbH. I have had the opportunity to learn from my teammates and participate in
-    advanced training in Frontend Engineering, including setting up a Cypress E2E
-    Docker environment for our software and implementing over 100 E2E tests. In
-    partnership with the Business Owner, Product Owner, and our customers, I planned
-    and implemented a new Design System using Figma also a Micro-Frontend Architecture
-    for our new application written in React, D3.js, Jest, Typescript, and
-    API-Platform to communicate with the Backend. 
-    </br>
-    </br>
-    With the help of our R&D process with our customers, we
-    were able to develop a fully functional application with real-time interactive and
-    dynamic charts. With over four years of practical experience, I am eager to apply
-    my skills to your business, accelerating the research and development process from
-    scratch to a fully functional Application, beyond just an MVP.
-    </p>
-    ${PersonalDevelopment}
-    ${PreviewTimeBoxing}
-    </br>
-    ${HomeBtn}
-</div>
 `;
 
-window.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('about').innerHTML = About;
+// Variables to store loaded content
+let PersonalDevelopment;
+let BiographyContent;
+
+async function loadMarkdownContent() {
+  // Check if SimpleMarkdownParser is available
+  if (typeof SimpleMarkdownParser === 'undefined') {
+    console.error('SimpleMarkdownParser is not defined. Using fallback content.');
+    return;
+  }
+
+  try {
+    // Load Personal Development content
+    const personalDevMarkdown = await SimpleMarkdownParser.loadAndParse('./public/markdown/personal-development.md');
+    if (personalDevMarkdown) {
+      PersonalDevelopment = personalDevMarkdown;
+      console.log('Personal Development content loaded from markdown');
+    } else {
+      console.log('Personal Development markdown failed, using fallback');
+    }
+
+    // Load Biography content
+    const biographyMarkdown = await SimpleMarkdownParser.loadAndParse('./public/markdown/biography.md');
+    if (biographyMarkdown) {
+      BiographyContent = biographyMarkdown;
+      console.log('Biography content loaded from markdown');
+    } else {
+      console.log('Biography markdown failed, using fallback');
+    }
+  } catch (error) {
+    console.error('Markdown loading failed, using fallbacks:', error);
+  }
+}
+
+function renderAboutPage() {
+  const About = ` 
+  <div class="_content flex biography">
+      <h2>Bio</h2>
+      <h4 class="contrast-darkMode">Martin Straussberger born in Nuremberg, Germany</h4>
+      <div>
+        ${BiographyContent}
+      </div>
+      ${PersonalDevelopment}
+      ${PreviewTimeBoxing}
+      <br>
+      ${HomeBtn}
+  </div>
+  `;
+
+  const aboutElement = document.getElementById('about');
+  if (aboutElement) {
+    aboutElement.innerHTML = About;
+  }
+}
+
+window.addEventListener('DOMContentLoaded', async function () {
+  // Add a small delay to ensure all scripts are loaded
+  setTimeout(async () => {
+    await loadMarkdownContent();
+    renderAboutPage();
+  }, 100);
 });
