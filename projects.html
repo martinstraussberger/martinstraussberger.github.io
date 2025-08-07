@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Martin Straußberger - Projects</title>
+    <meta name="description" content="Explore my projects across various technologies including React, Flutter, Data Science, and more." />
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./public/css/variables.css" />
+    <link rel="stylesheet" href="./public/css/navbar.css" />
+    <link rel="stylesheet" href="./public/css/blog.css" />
+    <link rel="stylesheet" href="./public/css/projects.css" />
+    <link rel="stylesheet" href="./public/css/icons.css" />
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div id="navbar"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="blog-container">
+        <div class="blog-header">
+          <h1>My Projects</h1>
+          <p>A collection of projects showcasing various technologies and approaches to solving real-world problems.</p>
+        </div>
+
+        <!-- Projects Cards Container -->
+        <div id="projects-container" class="blog-cards">
+          <!-- Projects will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- JavaScript -->
+    <script type="module" src="./public/js/components/navbar.js"></script>
+    <script type="module" src="./public/js/components/footer.js"></script>
+    <script type="module" src="./public/js/components/projects.js"></script>
+  </body>
+</html>

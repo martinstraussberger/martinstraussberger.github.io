@@ -1,46 +1,143 @@
+/* ==========================================================================
+   About Page Styles - Component-based CSS Architecture
+   ========================================================================== */
+
+/* ==========================================================================
+   Biography Section Layout
+   ========================================================================== */
+
 .biography {
-  margin-top: 6vh;
+  margin: 5vh auto;
   text-align: justify;
-  margin: 5vh;
-  width: 50%;
+  width: min(50%, calc(100% - 2rem));
+  max-width: 800px;
+  padding: 0 1rem;
 }
 
-@media (min-width: 300px) and (max-width: 600px) {
+/* ==========================================================================
+   Contrast Dark Mode Component
+   ========================================================================== */
+
+.contrast-darkMode {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contrast-darkMode:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   Typography - Biography Content
+   ========================================================================== */
+
+.p-biography {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+/* ==========================================================================
+   Interactive Components
+   ========================================================================== */
+
+.timeboxing-preview {
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.timeboxing-preview img {
+  transition: transform 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   Responsive Design - Mobile First Approach
+   ========================================================================== */
+
+/* Small devices (phones) */
+@media (max-width: 600px) {
   .biography {
-    width: 100%;
+    width: calc(100% - 2rem);
     font-size: 1.125rem;
+    margin: 5vh 1rem;
+    text-align: left;
   }
 
   .contrast-darkMode {
-    width: 90%;
-    font-size: 1rem;
-
+    width: auto;
+    max-width: 90%;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
   }
 
   .p-biography {
-    padding: 20px;
+    padding: 1rem 0;
+    font-size: 1rem;
+  }
+  
+  .timeboxing-preview img {
+    max-width: 100%;
+    height: auto;
   }
 }
 
+/* Medium devices (tablets) */
+@media (min-width: 601px) and (max-width: 800px) {
+  .biography {
+    width: 70%;
+    padding: 0 1.5rem;
+  }
+
+  .contrast-darkMode {
+    font-size: 1.1rem;
+  }
+  
+  .p-biography {
+    font-size: 1.05rem;
+  }
+}
+
+/* Large devices (desktops) */
 @media (min-width: 800px) {
   .timeboxing-preview:hover {
-    cursor: zoom-in;
-    transform: scale(1.5);
-    transition: 0.5s ease-in-out;
+    transform: scale(1.05);
+  }
+  
+  .timeboxing-preview:hover img {
+    transform: scale(1.1);
   }
 
   .contrast-darkMode {
     font-size: 1.2rem;
   }
+  
+  .biography {
+    padding: 0 2rem;
+  }
 }
 
-.contrast-darkMode {
-  display: flex;
-  flex-direction: row;
-  background: white;
-  text-align: center;
-  align-items: center;
-  color: black;
-  padding: 8px;
-  border-radius: 12px;
+/* Extra large devices */
+@media (min-width: 1200px) {
+  .biography {
+    font-size: 1.1rem;
+  }
+  
+  .p-biography {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
 }

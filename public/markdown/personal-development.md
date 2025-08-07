@@ -1,12 +1,16 @@
 # How I approach my Goals
 
-As a fan of personal development, I firmly believe investing a couple of hours per day into ourselves is crucial. After all, it's time to take control of our lives and not let our inner temptations play the game for us. 
+As a fan of personal development, I firmly believe investing a couple of hours per day into ourselves is crucial. After all, it's time to take control of our lives and not let our inner temptations play the game for us.
 
-That's why I've created a **Timeboxing Model** that's free, accessible, and built with HTML and CSS, so you too can harness the power of time management. They say time is money, but I say it's worth even more. 
+That's why I've created a
+
+## Timeboxing Model
+
+that's free, accessible, and built with HTML and CSS, so you too can harness the power of time management. They say time is money, but I say it's worth even more.
 
 Every hour that passes without valuing it is a lost opportunity. An hour lost is not just a missed opportunity but a depletion of the precious and limited time we have on this unique planet. So, let's make the most of every minute with the help of the Timeboxing concept.
 
-I can personally attest to its effectiveness and its positive impact on my daily goals and life aspirations. For example, building this website and rescuing a lost puppy from Morocco were two monumental tasks while working full-time. We fought and organized for five months bringing the puppy to Germany, undergo the blood test procedures, and satisfy all government requirements. 
+I can personally attest to its effectiveness and its positive impact on my daily goals and life aspirations. For example, building this website and rescuing a lost puppy from Morocco were two monumental tasks while working full-time. We fought and organized for five months bringing the puppy to Germany, undergo the blood test procedures, and satisfy all government requirements.
 
 To sum up, we do not regret our decision, despite the bunch of work and obstacles.
 

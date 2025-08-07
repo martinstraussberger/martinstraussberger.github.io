@@ -41,20 +41,26 @@
     <link rel="stylesheet" href="./public/css/variables.css" />
     <link rel="stylesheet" href="./public/css/index.css" />
     <link rel="stylesheet" href="./public/css/navbar.css" />
+    <link rel="stylesheet" href="./public/css/about.css" />
     <link rel="stylesheet" href="./public/css/icons.css" />
     <title>Martin Straussberger</title>
   </head>
   <body>
+    <!-- Load markdown parser first, before any components that depend on it -->
     <script src="./public/js/util/markdown-parser.js"></script>
+    <script src="./public/js/util/blog-service.js"></script>
     
+    <!-- Load components in dependency order -->
     <script type="module" src="./public/js/components/navbar.js"></script>
     <script type="module" src="./public/js/components/profile.js"></script>
-    <script type="module" src="./public/js/components/footer.js"></script>
+    <script src="./public/js/components/footer.js"></script>
 
-    <section class="auto-grid _text">
-      <div id="navbar"></div>
-      <div id="profile" class="grid-item1 flex _title"></div>
-      <footer id="footer" class="grid-item2 footer flex"></footer>
-    </section>
+    <main>
+      <section class="auto-grid _text" role="main" aria-label="Main content">
+        <nav id="navbar" role="navigation" aria-label="Main navigation"></nav>
+        <section id="profile" class="grid-item1 flex _title" role="banner" aria-label="Profile information"></section>
+        <footer id="footer" class="grid-item2 footer flex" role="contentinfo" aria-label="Site footer"></footer>
+      </section>
+    </main>
   </body>
 </html>

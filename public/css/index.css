@@ -12,6 +12,7 @@ body.dark-theme {
   --text-dawn: #FF3D81;
   background-image: url(../images/triangular.png);
 }
+
 body {
   --text-twilight: #000;
   --dropdown-box-twilight: #e9eaede0;
@@ -79,11 +80,11 @@ i {
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    font-size: 2rem;
-    padding: 12px;
-    color: var(--text-twilight);
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  padding: 12px;
+  color: var(--text-twilight);
 
 }
 
@@ -109,9 +110,10 @@ i {
   }
 }
 
-/*------------------------------------*\
-  # Grid 
-\*------------------------------------*/
+/* ==========================================================================
+  # Grid
+   ========================================================================== */
+   
 .auto-grid {
   --auto-grid-min-size: 16rem;
 }
@@ -160,7 +162,8 @@ i {
 ._avatarImage {
   border-radius: 50%;
   object-fit: cover;
-  zoom: 150%;
+  zoom: 130%;
+  margin-bottom: 1.5rem;
 }
 
 .grid {
@@ -191,7 +194,7 @@ i {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 700;
-
+  line-height: 1.2;
 }
 
 ._content {
@@ -205,35 +208,47 @@ i {
   width: 50%;
 }
 
+/* ==========================================================================
+   Footer Component
+   ========================================================================== */
+
 .footer {
-  margin: 0 auto 5vh auto;
-  max-width: 680px;
+  margin: 0 auto 5vh;
+  max-width: min(680px, 90vw);
   width: 100%;
   padding: 0 1rem;
   text-align: center;
 }
 
-/* Responsive footer adjustments */
-@media (max-width: 768px) {
-  .footer {
-    max-width: 90%;
-    padding: 0 1.5rem;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .footer {
-    max-width: 95%;
-    padding: 1rem;
-  }
-}
-
-/* Ensure footer content is properly spaced */
 .footer p {
   margin: 0;
   line-height: 1.6;
   font-size: 1.1rem;
   text-align: left;
   font-weight: 400;
+}
+
+/* ==========================================================================
+   Responsive Footer Adjustments
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 0 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  .footer p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1rem;
+  }
+
+  .footer p {
+    font-size: 0.95rem;
+  }
 }

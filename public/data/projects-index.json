@@ -1,0 +1,110 @@
+{
+  "projects": [
+    {
+      "id": "nereus-diving",
+      "title": "Nereus Diving",
+      "description": "A diving center website showcasing underwater adventures and diving courses with a focus on user experience and visual storytelling.",
+      "techStack": "HTML, CSS, JavaScript, PHP",
+      "category": "web",
+      "featured": true,
+      "projectUrl": "https://martinstraussberger.dev/nereus-diving-2018",
+      "githubUrl": null,
+      "image": "./public/images/projects/nereus-diving.jpg"
+    },
+    {
+      "id": "diary-app",
+      "title": "Diary App",
+      "description": "A personal diary application built with React and TypeScript, featuring secure authentication and rich text editing capabilities.",
+      "techStack": "React, TypeScript, Node.js, MongoDB",
+      "category": "react",
+      "featured": true,
+      "projectUrl": "https://martinstraussberger.dev/diary-app/",
+      "githubUrl": null,
+      "image": "./public/images/projects/diary-app.jpg"
+    },
+    {
+      "id": "mern-fullstack",
+      "title": "MERN Fullstack App",
+      "description": "A comprehensive fullstack application demonstrating the MERN stack with user authentication, CRUD operations, and responsive design.",
+      "techStack": "MongoDB, Express.js, React, Node.js",
+      "category": "react",
+      "featured": true,
+      "projectUrl": "https://ms-mern.herokuapp.com",
+      "githubUrl": null,
+      "image": "./public/images/projects/mern-app.jpg"
+    },
+    {
+      "id": "redux-dashboard",
+      "title": "Redux Dashboard",
+      "description": "A data visualization dashboard built with React and Redux, featuring dynamic charts, state management, and real-time updates.",
+      "techStack": "React, Redux, TypeScript, Chart.js",
+      "category": "react",
+      "featured": true,
+      "projectUrl": "https://martinstraussberger.dev/reduxdashboard",
+      "githubUrl": null,
+      "image": "./public/images/projects/redux-dashboard.jpg"
+    },
+    {
+      "id": "react-d3-chart",
+      "title": "React & D3.js Chart",
+      "description": "Interactive data visualization prototype combining React components with D3.js for creating dynamic and responsive charts.",
+      "techStack": "React, D3.js, TypeScript, SVG",
+      "category": "react",
+      "featured": true,
+      "projectUrl": "https://martinstraussberger.dev/prototype-react-d3js-chart",
+      "githubUrl": null,
+      "image": "./public/images/projects/react-d3-chart.jpg"
+    },
+    {
+      "id": "eeg-brainwave-analysis",
+      "title": "Analyzing Brain Waves",
+      "description": "Data science project analyzing EEG brainwave patterns using R, featuring statistical analysis and machine learning techniques.",
+      "techStack": "R, Python, Machine Learning, Data Visualization",
+      "category": "data-science",
+      "featured": true,
+      "projectUrl": "https://martinstraussberger.dev/eegbrainwavebook",
+      "githubUrl": null,
+      "image": "./public/images/projects/eeg-analysis.jpg"
+    },
+    {
+      "id": "health-calculator",
+      "title": "Health Calculation App",
+      "description": "A Flutter mobile application for health calculations including BMI, calorie tracking, and fitness metrics with a clean, intuitive interface.",
+      "techStack": "Flutter, Dart, SQLite, Material Design",
+      "category": "flutter",
+      "featured": true,
+      "projectUrl": "https://martinstraussberger.dev/health-calculator-app/",
+      "githubUrl": null,
+      "image": "./public/images/projects/health-calculator.jpg"
+    },
+    {
+      "id": "expanse-wallet",
+      "title": "Expanse Wallet",
+      "description": "A cryptocurrency wallet application built with Flutter, featuring secure transaction handling and intuitive portfolio management.",
+      "techStack": "Flutter, Dart, Blockchain APIs, Cryptography",
+      "category": "flutter",
+      "featured": true,
+      "projectUrl": "https://martinstraussberger.dev/expansewallet",
+      "githubUrl": null,
+      "image": "./public/images/projects/expanse-wallet.jpg"
+    }
+  ],
+  "categories": {
+    "web": {
+      "name": "Web Development",
+      "description": "Pure HTML, CSS, JavaScript & PHP projects"
+    },
+    "react": {
+      "name": "React & TypeScript",
+      "description": "Modern frontend applications with React ecosystem"
+    },
+    "data-science": {
+      "name": "Data Science & R&D",
+      "description": "Research and development projects with data analysis"
+    },
+    "flutter": {
+      "name": "Flutter Development",
+      "description": "Cross-platform mobile applications"
+    }
+  }
+}

@@ -1,22 +1,37 @@
+// Footer data structure
+const footerData = {
+  markdown: {
+    path: './public/markdown/footer.md'
+  }
+};
+
 let Footer;
 
 async function loadFooterContent() {
-  try {
-    const markdownContent = await SimpleMarkdownParser.loadAndParse('./public/markdown/footer.md');
+  // Check if SimpleMarkdownParser is available
+  if (typeof SimpleMarkdownParser === 'undefined') {
+    console.warn('SimpleMarkdownParser is not defined.');
+  }
 
-    if (markdownContent) {
+  try {
+    const markdownContent = await SimpleMarkdownParser.loadAndParse(footerData.markdown.path);
+
+    if (markdownContent && markdownContent.trim()) {
       Footer = markdownContent;
       console.log('Footer markdown loaded successfully');
     } else {
-      console.log('Footer markdown returned null, using fallback');
+      console.log('Footer markdown returned null or empty.');
       Footer = FooterFallback;
     }
   } catch (error) {
-    console.error('Footer markdown loading failed, using fallback:', error);
+    console.warn('Footer markdown loading failed:', error);
     Footer = FooterFallback;
   }
 
-  // Render the footer
+  renderFooter();
+}
+
+function renderFooter() {
   const footerElement = document.getElementById('footer');
   if (footerElement) {
     // Store existing classes before setting innerHTML
