@@ -2,56 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Martin Straußberger - Projects</title>
-    <meta name="description" content="Explore my projects across various technologies including React, Flutter, Data Science, and more." />
-    
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="./public/css/variables.css" />
-    <link rel="stylesheet" href="./public/css/navbar.css" />
-    <link rel="stylesheet" href="./public/css/blog.css" />
-    <link rel="stylesheet" href="./public/css/projects.css" />
-    <link rel="stylesheet" href="./public/css/icons.css" />
-
-    <!-- FontAwesome Icons -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+      default-src 'self'; 
+      img-src 'self'; 
+      child-src 'self'; 
+      style-src 'unsafe-inline' 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css https://fonts.googleapis.com;
+      style-src-elem 'unsafe-inline' 'self' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css https://fonts.googleapis.com;
+      font-src 'unsafe-inline' 'self' fonts.gstatic.com cdnjs.cloudflare.com;
+      script-src 'unsafe-inline' 'self';
+      script-src-elem 'unsafe-inline' 'self';
+      object-src 'self';
+      base-uri 'none';"
+    />
+    <link el="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+    <meta name="msapplication-TileColor" content="#00000" />
+    <meta name="theme-color" content="#00000" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./public/css/variables.css" />
+    <link rel="stylesheet" href="./public/css/index.css" />
+    <link rel="stylesheet" href="./public/css/navbar.css" />
+    <link rel="stylesheet" href="./public/css/blog.css" />
+    <link rel="stylesheet" href="./public/css/icons.css" />
+    <title>Projects - Martin Straussberger</title>
   </head>
-  <body>
-    <!-- Navigation -->
-    <div id="navbar"></div>
-
-    <!-- Main Content -->
-    <main class="main-content">
-      <div class="blog-container">
-        <div class="blog-header">
-          <h1>My Projects</h1>
-          <p>A collection of projects showcasing various technologies and approaches to solving real-world problems.</p>
-        </div>
-
-        <!-- Projects Cards Container -->
-        <div id="projects-container" class="blog-cards">
-          <!-- Projects will be loaded here by JavaScript -->
-        </div>
-      </div>
-    </main>
-
-    <!-- Footer -->
-    <div id="footer"></div>
-
-    <!-- JavaScript -->
+  <body class="about-body">
+    <!-- Load utilities first -->
+    <script src="./public/js/util/projects-service.js"></script>
+    <script src="./public/js/util/card-renderer.js"></script>
+    
+    <!-- Load components -->
     <script type="module" src="./public/js/components/navbar.js"></script>
-    <script type="module" src="./public/js/components/footer.js"></script>
-    <script type="module" src="./public/js/components/projects.js"></script>
+    <script src="./public/js/components/projects.js"></script>
+
+    <main>
+      <nav id="navbar" role="navigation" aria-label="Main navigation"></nav>
+      <section id="projects" role="main" aria-label="Project showcase"></section>
+    </main>
   </body>
 </html>

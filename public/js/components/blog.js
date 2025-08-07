@@ -1,4 +1,4 @@
-// Blog listing component following your established patterns
+// Blog listing component using shared card renderer
 const blogData = {
     navigation: {
         homeUrl: "./index.html",
@@ -19,35 +19,6 @@ const BackToHome = `
   </a>
 </div>
 `;
-
-// Blog post card component
-function createPostCard(post) {
-    const categoryName = window.BlogService.getCategoryName(post.category);
-    const formattedDate = window.BlogService.formatDate(post.publishedAt);
-
-    return `
-    <article class="blog-card" aria-labelledby="post-${post.id}">
-      <div class="blog-card-content">
-        <div class="blog-meta">
-          <span class="blog-category contrast-darkMode">${categoryName}</span>
-          <time datetime="${post.publishedAt}" class="blog-date">${formattedDate}</time>
-        </div>
-        <h2 id="post-${post.id}" class="blog-title">
-          <a href="./blog-post.html?post=${post.id}" class="blog-title-link">
-            ${post.title}
-          </a>
-        </h2>
-        <p class="blog-excerpt">${post.excerpt}</p>
-        <div class="blog-footer">
-          <span class="blog-read-time">${post.readTime}</span>
-          <a href="./blog-post.html?post=${post.id}" class="blog-read-more" aria-label="Read full article: ${post.title}">
-            Read More →
-          </a>
-        </div>
-      </div>
-    </article>
-  `;
-}
 
 // Category filter component
 function createCategoryFilter(currentCategory) {
@@ -113,7 +84,7 @@ function renderBlogPage() {
       
       <main class="blog-grid" role="main" aria-label="Blog articles">
         ${blogPosts.length > 0
-            ? blogPosts.map(post => createPostCard(post)).join('')
+            ? window.CardRenderer.renderBlogPosts(blogPosts)
             : `<p class="no-posts">${blogData.ui.noPostsMessage}</p>`
         }
       </main>
@@ -134,15 +105,15 @@ window.addEventListener('DOMContentLoaded', async function () {
         return;
     }
 
-    // Wait for BlogService to be available
+    // Wait for required services to be available
     let attempts = 0;
-    while (!window.BlogService && attempts < 50) {
+    while ((!window.BlogService || !window.CardRenderer) && attempts < 50) {
         await new Promise(resolve => setTimeout(resolve, 10));
         attempts++;
     }
 
-    if (!window.BlogService) {
-        console.error('BlogService failed to initialize');
+    if (!window.BlogService || !window.CardRenderer) {
+        console.error('Required services failed to initialize');
         return;
     }
 
