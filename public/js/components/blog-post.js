@@ -1,0 +1,184 @@
+// Individual blog post component
+const blogPostData = {
+  navigation: {
+    homeUrl: "./index.html", 
+    blogUrl: "./blog.html",
+    homeLabel: "Home",
+    blogLabel: "Blog"
+  },
+  ui: {
+    notFoundTitle: "Article Not Found",
+    notFoundMessage: "The requested article could not be found.",
+    loadingMessage: "Loading article..."
+  }
+};
+
+const BlogPostNavigation = `
+<div class="blog-post-navigation">
+  <a href="${blogPostData.navigation.homeUrl}" aria-label="Go back to homepage" class="back-link">
+    <i class="fa-solid fa-arrow-left"></i> ${blogPostData.navigation.homeLabel}
+  </a>
+  <span class="nav-separator">|</span>
+  <a href="${blogPostData.navigation.blogUrl}" aria-label="Back to blog listing" class="back-link">
+    ${blogPostData.navigation.blogLabel}
+  </a>
+</div>
+`;
+
+// Blog post metadata component
+function createPostMeta(post) {
+  const categoryName = window.BlogService.getCategoryName(post.category);
+  const formattedDate = window.BlogService.formatDate(post.publishedAt);
+  
+  return `
+    <div class="blog-post-meta">
+      <span class="blog-category contrast-darkMode">${categoryName}</span>
+      <div class="meta-details">
+        <time datetime="${post.publishedAt}" class="blog-date">${formattedDate}</time>
+        <span class="meta-separator">•</span>
+        <span class="blog-read-time">${post.readTime}</span>
+      </div>
+    </div>
+  `;
+}
+
+// Related posts component  
+function createRelatedPosts(relatedPosts) {
+  if (!relatedPosts || relatedPosts.length === 0) return '';
+  
+  return `
+    <section class="related-posts" aria-labelledby="related-heading">
+      <h3 id="related-heading">Related Articles</h3>
+      <div class="related-grid">
+        ${relatedPosts.map(post => `
+          <article class="related-card">
+            <span class="related-category">${window.BlogService.getCategoryName(post.category)}</span>
+            <h4>
+              <a href="./blog-post.html?post=${post.id}" class="related-link">
+                ${post.title}
+              </a>
+            </h4>
+            <p class="related-excerpt">${post.excerpt}</p>
+          </article>
+        `).join('')}
+      </div>
+    </section>
+  `;
+}
+
+// Main blog post state
+let currentPost = null;
+let relatedPosts = [];
+
+async function loadBlogPost() {
+  // Ensure BlogService is available
+  if (!window.BlogService) {
+    console.error('BlogService not available');
+    return;
+  }
+  
+  const params = window.BlogService.getUrlParams();
+  const postId = params.post;
+  
+  if (!postId) {
+    console.error('No post ID provided');
+    return;
+  }
+
+  try {
+    currentPost = await window.BlogService.getBlogPost(postId);
+    
+    if (currentPost) {
+      // Load related posts (same category, excluding current post)
+      const allPosts = await window.BlogService.getBlogPosts(currentPost.category);
+      relatedPosts = allPosts
+        .filter(post => post.id !== postId)
+        .slice(0, 2); // Show max 2 related posts
+      
+      console.log(`Loaded blog post: ${currentPost.title}`);
+    } else {
+      console.error(`Blog post not found: ${postId}`);
+    }
+  } catch (error) {
+    console.error('Error loading blog post:', error);
+  }
+}
+
+function renderBlogPost() {
+  if (!currentPost) {
+    const NotFoundPage = `
+      ${BlogPostNavigation}
+      <div class="blog-post-container">
+        <article class="blog-post-content">
+          <h1>${blogPostData.ui.notFoundTitle}</h1>
+          <p>${blogPostData.ui.notFoundMessage}</p>
+        </article>
+      </div>
+    `;
+    
+    const blogPostElement = document.getElementById('blog-post');
+    if (blogPostElement) {
+      blogPostElement.innerHTML = NotFoundPage;
+    }
+    return;
+  }
+
+  const BlogPost = `
+    ${BlogPostNavigation}
+    <div class="blog-post-container">
+      <article class="blog-post-content" role="main" aria-labelledby="post-title">
+        <header class="blog-post-header">
+          ${createPostMeta(currentPost)}
+          <h1 id="post-title" class="blog-post-title">${currentPost.title}</h1>
+        </header>
+        
+        <div class="blog-post-body">
+          ${currentPost.content}
+        </div>
+      </article>
+      
+      ${createRelatedPosts(relatedPosts)}
+    </div>
+  `;
+
+  const blogPostElement = document.getElementById('blog-post');
+  if (blogPostElement) {
+    blogPostElement.innerHTML = BlogPost;
+  } else {
+    console.error('Blog post container element not found');
+  }
+}
+
+window.addEventListener('DOMContentLoaded', async function () {
+  // Check if we're on the blog post page
+  if (!document.getElementById('blog-post')) {
+    return;
+  }
+  
+  // Wait for BlogService to be available
+  let attempts = 0;
+  while (!window.BlogService && attempts < 50) {
+    await new Promise(resolve => setTimeout(resolve, 10));
+    attempts++;
+  }
+  
+  if (!window.BlogService) {
+    console.error('BlogService failed to initialize');
+    return;
+  }
+  
+  // Show loading state
+  const blogPostElement = document.getElementById('blog-post');
+  if (blogPostElement) {
+    blogPostElement.innerHTML = `
+      ${BlogPostNavigation}
+      <div class="blog-post-container">
+        <p class="loading">${blogPostData.ui.loadingMessage}</p>
+      </div>
+    `;
+  }
+  
+  // Load and render content
+  await loadBlogPost();
+  renderBlogPost();
+});

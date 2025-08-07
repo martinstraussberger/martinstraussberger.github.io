@@ -1,0 +1,45 @@
+{
+  "posts": [
+    {
+      "id": "neuroplasticity-leadership",
+      "title": "The Science of Neuroplasticity in Leadership Development",
+      "excerpt": "Discover how neuroscience research reveals that leadership skills can be developed at any stage of your career through understanding brain plasticity.",
+      "category": "neuroscience",
+      "markdownPath": "./public/markdown/blog/neuroplasticity-leadership.md",
+      "featured": true,
+      "publishedAt": "2025-08-07"
+    },
+    {
+      "id": "pragmatic-software-engineering",
+      "title": "The Art of Pragmatic Software Engineering",
+      "excerpt": "Learn how to balance best practices with practical constraints to deliver value while maintaining code quality in real-world software development.",
+      "category": "engineering",
+      "markdownPath": "./public/markdown/blog/pragmatic-software-engineering.md",
+      "featured": true,
+      "publishedAt": "2025-08-07"
+    },
+    {
+      "id": "age-of-ai",
+      "title": "Navigating the Age of AI: Opportunities and Responsibilities",
+      "excerpt": "Explore the transformative impact of AI on society, the opportunities it creates, and the responsibilities we must embrace to shape a beneficial future.",
+      "category": "ai",
+      "markdownPath": "./public/markdown/blog/age-of-ai.md",
+      "featured": true,
+      "publishedAt": "2025-08-07"
+    }
+  ],
+  "categories": {
+    "neuroscience": {
+      "name": "Neuroscience & Leadership",
+      "description": "Insights on leadership, team dynamics, and human psychology in tech environments"
+    },
+    "engineering": {
+      "name": "Software Engineering",
+      "description": "Technical deep dives, architecture patterns, and development best practices"
+    },
+    "ai": {
+      "name": "The Age of AI",
+      "description": "Exploring AI's impact on development, team workflows, and the future of tech"
+    }
+  }
+}
