@@ -1,9 +1,5 @@
-// Projects listing component using shared card renderer
+// Projects listing component using shared card renderer and UI components
 const projectsData = {
-    navigation: {
-        homeUrl: "./index.html",
-        homeLabel: "Home"
-    },
     ui: {
         title: "Projects",
         subtitle: "Showcasing various technologies and solutions",
@@ -11,14 +7,6 @@ const projectsData = {
         loadingMessage: "Loading projects..."
     }
 };
-
-const BackToHome = `
-<div class="blog-navigation">
-  <a href="${projectsData.navigation.homeUrl}" aria-label="Go back to homepage" class="back-link">
-    <i class="fa-solid fa-arrow-left"></i> ${projectsData.navigation.homeLabel}
-  </a>
-</div>
-`;
 
 // Category filter component
 function createCategoryFilter(currentCategory) {
@@ -74,7 +62,6 @@ function renderProjectsPage() {
     const subtitle = currentCategory ? `${categoryName} Projects` : projectsData.ui.subtitle;
 
     const ProjectsPage = `
-    ${BackToHome}
     <div class="blog-container">
       <header class="blog-header">
         <h1>${projectsData.ui.title}</h1>
@@ -89,6 +76,7 @@ function renderProjectsPage() {
             : `<p class="no-posts">${projectsData.ui.noProjectsMessage}</p>`
         }
       </main>
+        ${window.UIComponents.BackToHome}
     </div>
   `;
 
@@ -108,23 +96,30 @@ window.addEventListener('DOMContentLoaded', async function () {
 
     // Wait for required services to be available
     let attempts = 0;
-    while ((!window.ProjectsService || !window.CardRenderer) && attempts < 50) {
+    while ((!window.ProjectsService || !window.CardRenderer || !window.UIComponents) && attempts < 50) {
         await new Promise(resolve => setTimeout(resolve, 10));
         attempts++;
     }
 
-    if (!window.ProjectsService || !window.CardRenderer) {
+    if (!window.ProjectsService || !window.CardRenderer || !window.UIComponents) {
         console.error('Required services failed to initialize');
         return;
+    }
+
+    // Wait for navbar to be initialized (check for theme toggle button)
+    let navbarAttempts = 0;
+    while (!document.querySelector('._themeToggle') && navbarAttempts < 100) {
+        await new Promise(resolve => setTimeout(resolve, 50));
+        navbarAttempts++;
     }
 
     // Show loading state
     const projectsElement = document.getElementById('projects');
     if (projectsElement) {
         projectsElement.innerHTML = `
-      ${BackToHome}
+      ${window.UIComponents.BackToHome}
       <div class="blog-container">
-        <p class="loading">${projectsData.ui.loadingMessage}</p>
+        ${window.UIComponents.createLoadingState(projectsData.ui.loadingMessage)}
       </div>
     `;
     }

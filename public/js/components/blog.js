@@ -1,4 +1,3 @@
-// Blog listing component using shared card renderer
 const blogData = {
     navigation: {
         homeUrl: "./index.html",
@@ -11,14 +10,6 @@ const blogData = {
         loadingMessage: "Loading articles..."
     }
 };
-
-const BackToHome = `
-<div class="blog-navigation">
-  <a href="${blogData.navigation.homeUrl}" aria-label="Go back to homepage" class="back-link">
-    <i class="fa-solid fa-arrow-left"></i> ${blogData.navigation.homeLabel}
-  </a>
-</div>
-`;
 
 // Category filter component
 function createCategoryFilter(currentCategory) {
@@ -73,7 +64,6 @@ function renderBlogPage() {
     const subtitle = currentCategory ? `${categoryName} Articles` : blogData.ui.subtitle;
 
     const BlogPage = `
-    ${BackToHome}
     <div class="blog-container">
       <header class="blog-header">
         <h1>${blogData.ui.title}</h1>
@@ -88,6 +78,7 @@ function renderBlogPage() {
             : `<p class="no-posts">${blogData.ui.noPostsMessage}</p>`
         }
       </main>
+        ${window.UIComponents.BackToHome}
     </div>
   `;
 
@@ -107,12 +98,12 @@ window.addEventListener('DOMContentLoaded', async function () {
 
     // Wait for required services to be available
     let attempts = 0;
-    while ((!window.BlogService || !window.CardRenderer) && attempts < 50) {
+    while ((!window.BlogService || !window.CardRenderer || !window.UIComponents) && attempts < 50) {
         await new Promise(resolve => setTimeout(resolve, 10));
         attempts++;
     }
 
-    if (!window.BlogService || !window.CardRenderer) {
+    if (!window.BlogService || !window.CardRenderer || !window.UIComponents) {
         console.error('Required services failed to initialize');
         return;
     }
@@ -121,9 +112,9 @@ window.addEventListener('DOMContentLoaded', async function () {
     const blogElement = document.getElementById('blog');
     if (blogElement) {
         blogElement.innerHTML = `
-      ${BackToHome}
+      ${window.UIComponents.BackToHome}
       <div class="blog-container">
-        <p class="loading">${blogData.ui.loadingMessage}</p>
+        ${window.UIComponents.createLoadingState(blogData.ui.loadingMessage)}
       </div>
     `;
     }

@@ -2,17 +2,17 @@
   "posts": [
     {
       "id": "neuroplasticity-leadership",
-      "title": "The Science of Neuroplasticity in Leadership Development",
-      "excerpt": "Discover how neuroscience research reveals that leadership skills can be developed at any stage of your career through understanding brain plasticity.",
+      "title": "Exploration of Dopamine",
+      "excerpt": "Explore the science behind what drives us, from the role of dopamine in anticipation to the factors that influence our motivation. This guide delves into managing challenges like pain and fear, and offers practical strategies.",
       "category": "neuroscience",
       "markdownPath": "./public/markdown/blog/neuroplasticity-leadership.md",
       "featured": true,
       "publishedAt": "2025-08-07"
     },
     {
-      "id": "pragmatic-software-engineering",
-      "title": "The Art of Pragmatic Software Engineering",
-      "excerpt": "Learn how to balance best practices with practical constraints to deliver value while maintaining code quality in real-world software development.",
+      "id": "science-of-goal-setting",
+      "title": "Science of Psychology of Goal Setting 101",
+      "excerpt": "Learn the key theories behind powerful goal setting. This summary explains core principles, the SMART model, and the psychological factors like self-belief and feedback that lead to high performance.",
       "category": "engineering",
       "markdownPath": "./public/markdown/blog/pragmatic-software-engineering.md",
       "featured": true,

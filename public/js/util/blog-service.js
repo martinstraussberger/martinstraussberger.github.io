@@ -18,7 +18,7 @@ let blogIndexCache = null;
 
 async function loadBlogIndex() {
     if (blogIndexCache) return blogIndexCache;
-    
+
     try {
         const response = await fetch(BLOG_CONFIG.indexPath);
         if (!response.ok) {
@@ -82,13 +82,13 @@ async function getFeaturedPosts() {
 async function getBlogPost(id) {
     const index = await loadBlogIndex();
     const post = (index.posts || []).find(post => post.id === id);
-    
+
     if (!post) return null;
 
     try {
         const content = await SimpleMarkdownParser.loadAndParse(post.markdownPath);
         const readTime = calculateReadTime(content);
-        
+
         return {
             ...post,
             content: content || '<p>Content not available.</p>',
@@ -131,11 +131,11 @@ function calculateReadTime(text) {
     if (!text || typeof text !== 'string') {
         return `${BLOG_CONFIG.minReadTime} min read`;
     }
-    
+
     const wordCount = text.trim().split(/\s+/).length;
     const readTimeMinutes = Math.ceil(wordCount / BLOG_CONFIG.wordsPerMinute);
     const finalReadTime = Math.max(readTimeMinutes, BLOG_CONFIG.minReadTime);
-    
+
     return `${finalReadTime} min read`;
 }
 
@@ -146,13 +146,13 @@ const BlogService = {
     getBlogPosts,
     getFeaturedPosts,
     getBlogPost,
-    
+
     // Utility functions
     formatDate,
     getCategoryName,
     getUrlParams,
     calculateReadTime,
-    
+
     // Config access (read-only)
     get categories() {
         return { ...BLOG_CONFIG.categories };

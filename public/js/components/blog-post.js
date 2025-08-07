@@ -1,4 +1,3 @@
-// Individual blog post component
 const blogPostData = {
   navigation: {
     homeUrl: "./index.html", 
@@ -12,18 +11,6 @@ const blogPostData = {
     loadingMessage: "Loading article..."
   }
 };
-
-const BlogPostNavigation = `
-<div class="blog-post-navigation">
-  <a href="${blogPostData.navigation.homeUrl}" aria-label="Go back to homepage" class="back-link">
-    <i class="fa-solid fa-arrow-left"></i> ${blogPostData.navigation.homeLabel}
-  </a>
-  <span class="nav-separator">|</span>
-  <a href="${blogPostData.navigation.blogUrl}" aria-label="Back to blog listing" class="back-link">
-    ${blogPostData.navigation.blogLabel}
-  </a>
-</div>
-`;
 
 // Blog post metadata component
 function createPostMeta(post) {
@@ -107,7 +94,7 @@ async function loadBlogPost() {
 function renderBlogPost() {
   if (!currentPost) {
     const NotFoundPage = `
-      ${BlogPostNavigation}
+      ${window.UIComponents.createBlogPostNavigation()}
       <div class="blog-post-container">
         <article class="blog-post-content">
           <h1>${blogPostData.ui.notFoundTitle}</h1>
@@ -124,7 +111,7 @@ function renderBlogPost() {
   }
 
   const BlogPost = `
-    ${BlogPostNavigation}
+    ${window.UIComponents.createBlogPostNavigation()}
     <div class="blog-post-container">
       <article class="blog-post-content" role="main" aria-labelledby="post-title">
         <header class="blog-post-header">
@@ -155,15 +142,15 @@ window.addEventListener('DOMContentLoaded', async function () {
     return;
   }
   
-  // Wait for BlogService to be available
+  // Wait for required services to be available
   let attempts = 0;
-  while (!window.BlogService && attempts < 50) {
+  while ((!window.BlogService || !window.UIComponents) && attempts < 50) {
     await new Promise(resolve => setTimeout(resolve, 10));
     attempts++;
   }
   
-  if (!window.BlogService) {
-    console.error('BlogService failed to initialize');
+  if (!window.BlogService || !window.UIComponents) {
+    console.error('Required services failed to initialize');
     return;
   }
   
@@ -171,9 +158,9 @@ window.addEventListener('DOMContentLoaded', async function () {
   const blogPostElement = document.getElementById('blog-post');
   if (blogPostElement) {
     blogPostElement.innerHTML = `
-      ${BlogPostNavigation}
+      ${window.UIComponents.createBlogPostNavigation()}
       <div class="blog-post-container">
-        <p class="loading">${blogPostData.ui.loadingMessage}</p>
+        ${window.UIComponents.createLoadingState(blogPostData.ui.loadingMessage)}
       </div>
     `;
   }

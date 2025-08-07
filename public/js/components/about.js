@@ -21,12 +21,11 @@ const aboutData = {
   }
 };
 
-
-const HomeBtn = `
-<a href="${aboutData.navigation.homeUrl}" aria-label="Go back to homepage">
+// Use shared UI component for consistent navigation
+const HomeBtn = window.UIComponents ? window.UIComponents.BackToHome : 
+`<a href="${aboutData.navigation.homeUrl}" aria-label="Go back to homepage">
 <i class="homeBtn icon fa-solid fa-arrow-left"> ${aboutData.navigation.homeLabel}</i>
-</a>
-`;
+</a>`;
 
 const PreviewTimeBoxing = `
 <div class="flex">
@@ -44,6 +43,7 @@ const PreviewTimeBoxing = `
 </div>
 `;
 
+// Variables to store loaded content with fallbacks as defaults
 let PersonalDevelopment;
 let BiographyContent;
 
