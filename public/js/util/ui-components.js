@@ -60,7 +60,7 @@ function createBreadcrumbNav(breadcrumbs, options = {}) {
     }).join('');
 
     return `
-        <div class="blog-navigation ${className}">
+        <div class="${className}">
             <i class="fa-solid fa-arrow-left"></i>
             ${breadcrumbLinks}
         </div>

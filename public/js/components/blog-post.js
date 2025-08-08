@@ -111,7 +111,6 @@ function renderBlogPost() {
   }
 
   const BlogPost = `
-    ${window.UIComponents.createBlogPostNavigation()}
     <div class="blog-post-container">
       <article class="blog-post-content" role="main" aria-labelledby="post-title">
         <header class="blog-post-header">
@@ -123,7 +122,7 @@ function renderBlogPost() {
           ${currentPost.content}
         </div>
       </article>
-      
+      ${window.UIComponents.createBlogPostNavigation()}
       ${createRelatedPosts(relatedPosts)}
     </div>
   `;

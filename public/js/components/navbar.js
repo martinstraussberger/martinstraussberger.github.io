@@ -19,9 +19,6 @@ const Navbar = `
   <nav>
   <div class="navbar">
     ${RefGithub}
-    <div>
-      <i class="icon fa-solid fa-moon _themeToggle"></i>
-    </div>
     <ul class="nav">
       <li style="padding: 0 0 0 0">
         <a class="nav-links upperCase" href="./about.html">About</a>
@@ -33,6 +30,9 @@ const Navbar = `
         <a class="nav-links upperCase" href="./blog.html">Blog</a>
       </li>
     </ul>
+     <div>
+      <i class="icon fa-solid fa-moon _themeToggle"></i>
+    </div>
   </div>
   </nav>
   `;

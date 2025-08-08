@@ -1,11 +1,11 @@
 {
   "posts": [
     {
-      "id": "neuroplasticity-leadership",
+      "id": "exploration-of-dopamine",
       "title": "Exploration of Dopamine",
       "excerpt": "Explore the science behind what drives us, from the role of dopamine in anticipation to the factors that influence our motivation. This guide delves into managing challenges like pain and fear, and offers practical strategies.",
       "category": "neuroscience",
-      "markdownPath": "./public/markdown/blog/neuroplasticity-leadership.md",
+      "markdownPath": "./public/markdown/blog/exploration-of-dopamine.md",
       "featured": true,
       "publishedAt": "2025-08-07"
     },
@@ -14,13 +14,13 @@
       "title": "Science of Psychology of Goal Setting 101",
       "excerpt": "Learn the key theories behind powerful goal setting. This summary explains core principles, the SMART model, and the psychological factors like self-belief and feedback that lead to high performance.",
       "category": "engineering",
-      "markdownPath": "./public/markdown/blog/pragmatic-software-engineering.md",
+      "markdownPath": "./public/markdown/blog/principles-of-goal-setting.md",
       "featured": true,
       "publishedAt": "2025-08-07"
     },
     {
       "id": "age-of-ai",
-      "title": "Navigating the Age of AI: Opportunities and Responsibilities",
+      "title": "How to Make AI Your Personal Assistant",
       "excerpt": "Explore the transformative impact of AI on society, the opportunities it creates, and the responsibilities we must embrace to shape a beneficial future.",
       "category": "ai",
       "markdownPath": "./public/markdown/blog/age-of-ai.md",

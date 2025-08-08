@@ -83,12 +83,13 @@ function renderAboutPage() {
       <h2>Bio</h2>
       <h4 class="contrast-darkMode">${aboutData.profile.name} ${aboutData.profile.location}</h4>
       <div>
+        ${window.UIComponents.BackToHome}
         ${BiographyContent}
       </div>
-      ${PersonalDevelopment}
-      ${PreviewTimeBoxing}
+        ${PersonalDevelopment}
+        ${PreviewTimeBoxing}
       <br>
-      ${HomeBtn}
+        ${window.UIComponents.BackToHome}
   </div>
   `;
 

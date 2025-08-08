@@ -5,7 +5,7 @@
 .blog-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 5rem 1rem;
 }
 
 .blog-header {
@@ -144,7 +144,7 @@
 
 .blog-category {
     font-size: 0.8rem;
-    padding: 0.25rem 0.75rem;
+    color: #959393;
 }
 
 .blog-date {
@@ -226,7 +226,7 @@
 
 @media (max-width: 768px) {
     .blog-container {
-        padding: 1rem 0.5rem;
+        padding: 5rem 0.5rem;
     }
 
     .blog-header h1 {
@@ -240,6 +240,7 @@
     .blog-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+        justify-items: center;
     }
 
     .category-buttons {

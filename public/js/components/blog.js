@@ -70,15 +70,15 @@ function renderBlogPage() {
         <p class="blog-subtitle">${subtitle}</p>
       </header>
       
-      ${createCategoryFilter(currentCategory)}
-      
+    ${createCategoryFilter(currentCategory)}
+    ${window.UIComponents.BackToHome}
+
       <main class="blog-grid" role="main" aria-label="Blog articles">
         ${blogPosts.length > 0
             ? window.CardRenderer.renderBlogPosts(blogPosts)
             : `<p class="no-posts">${blogData.ui.noPostsMessage}</p>`
         }
       </main>
-        ${window.UIComponents.BackToHome}
     </div>
   `;
 

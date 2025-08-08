@@ -7,7 +7,7 @@ html {
 
 body.dark-theme {
   --text-twilight: #d0d1d4;
-  --dropdown-box-twilight: #363636e0;
+  --twilight: #363636e0;
   --background-color: #23272E;
   --text-dawn: #FF3D81;
   background-image: url(../images/triangular.png);
@@ -15,25 +15,20 @@ body.dark-theme {
 
 body {
   --text-twilight: #000;
-  --dropdown-box-twilight: #e9eaede0;
+  --twilight: #e9eaede0;
   --background-color: #fff;
-}
-
-a {
-  text-decoration: none;
-  color: #8507bb;
 }
 
 @media (prefers-color-scheme: light) {
   body {
     --text-twilight: #fff;
-    --dropdown-box-twilight: #363636e0;
+    --twilight: #363636e0;
     --background-color: #000;
   }
 
   body.light-theme {
     --text-twilight: #222;
-    --dropdown-box-twilight: #e9eaede0;
+    --twilight: #e9eaede0;
     --background-color: #fff;
     background-image: none;
   }
@@ -48,18 +43,6 @@ body {
 
 body.about-body {
   background-image: none;
-}
-
-.dropdown:hover .dropdown-content {
-  position: absolute;
-  margin-top: 0.2rem;
-  right: 1%;
-  background: var(--dropdown-box-twilight);
-  border-radius: 8px;
-}
-
-.dropdown-content a {
-  color: var(--text-twilight);
 }
 
 h1,

@@ -47,7 +47,16 @@ function mapProjectToCard(project) {
 
 // === Core Card Renderer ===
 function createUniversalCard(cardData) {
-    const { id, title, description, primaryMeta, secondaryMeta, footerLeft, footerRight, type } = cardData;
+    const {
+        id,
+        title,
+        description,
+        primaryMeta,
+        secondaryMeta,
+        footerLeft,
+        footerRight,
+        type
+    } = cardData;
     
     return `
         <article class="blog-card" aria-labelledby="card-${id}">
@@ -60,9 +69,7 @@ function createUniversalCard(cardData) {
                     <a href="${footerRight.url}" 
                        class="blog-title-link"
                        ${footerRight.external ? 'target="_blank"' : ''}
-                       aria-label="${footerRight.ariaLabel}">
-                        ${title}
-                    </a>
+                       aria-label="${footerRight.ariaLabel}">${title}</a>
                 </h2>
                 <p class="blog-excerpt">${description}</p>
                 <div class="blog-footer">
