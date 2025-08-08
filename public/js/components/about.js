@@ -5,7 +5,7 @@ const aboutData = {
     location: "born in Nuremberg, Germany"
   },
   navigation: {
-    homeUrl: "./index.html",
+    homeUrl: "/",
     homeLabel: "Home"
   },
   timeboxing: {

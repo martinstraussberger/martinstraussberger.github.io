@@ -2,13 +2,13 @@
 
 // === Navigation Configuration ===
 const NAVIGATION_CONFIG = {
-    homeUrl: "./index.html",
+    homeUrl: "/",
     homeLabel: "Home",
-    blogUrl: "./blog.html", 
+    blogUrl: "/blog", 
     blogLabel: "Blog",
-    projectsUrl: "./projects.html",
+    projectsUrl: "/projects",
     projectsLabel: "Projects",
-    aboutUrl: "./about.html",
+    aboutUrl: "/about",
     aboutLabel: "About"
 };
 

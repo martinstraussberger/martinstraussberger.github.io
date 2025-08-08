@@ -1,6 +1,6 @@
 const blogData = {
     navigation: {
-        homeUrl: "./index.html",
+        homeUrl: "/",
         homeLabel: "Home"
     },
     ui: {
@@ -25,7 +25,7 @@ function createCategoryFilter(currentCategory) {
       <h3>Categories</h3>
       <div class="category-buttons">
         ${categories.map(cat => `
-          <a href="./blog.html${cat.key ? `?category=${cat.key}` : ''}" 
+          <a href="/blog${cat.key ? `?category=${cat.key}` : ''}" 
              class="category-btn ${currentCategory === cat.key ? 'active' : ''}"
              aria-label="Filter by ${cat.name}">
             ${cat.name}

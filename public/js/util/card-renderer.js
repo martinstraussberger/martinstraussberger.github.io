@@ -20,7 +20,7 @@ function mapBlogPostToCard(post) {
         footerLeft: post.readTime,
         footerRight: {
             text: 'Read More →',
-            url: `./blog-post.html?post=${post.id}`,
+            url: `/blog-post?post=${post.id}`,
             ariaLabel: `Read full article: ${post.title}`
         },
         image: post.image,

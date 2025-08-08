@@ -1,0 +1,9 @@
+{
+  "name": "martinstraussberger-portfolio",
+  "version": "1.0.0", 
+  "description": "Personal portfolio website",
+  "scripts": {
+    "update-blog-dates": "node scripts/update-blog-dates.js",
+    "pyserver": "python3 -m http.server 8000"
+  }
+}

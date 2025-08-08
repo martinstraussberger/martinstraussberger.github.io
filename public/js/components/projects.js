@@ -23,7 +23,7 @@ function createCategoryFilter(currentCategory) {
       <h3>Categories</h3>
       <div class="category-buttons">
         ${categories.map(cat => `
-          <a href="./projects.html${cat.key ? `?category=${cat.key}` : ''}" 
+          <a href="/projects${cat.key ? `?category=${cat.key}` : ''}" 
              class="category-btn ${currentCategory === cat.key ? 'active' : ''}"
              aria-label="Filter by ${cat.name}">
             ${cat.name}

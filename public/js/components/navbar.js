@@ -21,13 +21,13 @@ const Navbar = `
     ${RefGithub}
     <ul class="nav">
       <li style="padding: 0 0 0 0">
-        <a class="nav-links upperCase" href="./about.html">About</a>
+        <a class="nav-links upperCase" href="/about">About</a>
       </li>
       <li style="padding: 0 0 0 0">
-        <a class="nav-links upperCase" href="./projects.html">Projects</a>
+        <a class="nav-links upperCase" href="/projects">Projects</a>
       </li>
       <li style="padding: 0 0 0 0">
-        <a class="nav-links upperCase" href="./blog.html">Blog</a>
+        <a class="nav-links upperCase" href="/blog">Blog</a>
       </li>
     </ul>
      <div>

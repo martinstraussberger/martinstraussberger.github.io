@@ -1,7 +1,8 @@
-1. **Goal-Setting Theory (Locke & Latham)**. **Goal-Setting Theory (Locke & Latham)**
+1. **Goal-Setting Theory (Locke & Latham)**
 ![Dopamine Impact](./public/images/blog/neuroscience/goal-setting.png)
 
     This is the foundational theory, proposing that specific and difficult goals, when combined with feedback, lead to higher performance than vague or easy goals. The core idea is that goals are the immediate regulators of human action, driving effort, persistence, and focus.
+
 
 2. **The Five Principles of Effective Goal Setting**
 
