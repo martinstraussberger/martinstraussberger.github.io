@@ -11,9 +11,9 @@
     },
     {
       "id": "science-of-goal-setting",
-      "title": "Science of Psychology of Goal Setting 101",
+      "title": "Science of Goal Setting 101",
       "excerpt": "Learn the key theories behind powerful goal setting. This summary explains core principles, the SMART model, and the psychological factors like self-belief and feedback that lead to high performance.",
-      "category": "engineering",
+      "category": "neuroscience",
       "markdownPath": "./public/markdown/blog/principles-of-goal-setting.md",
       "featured": true,
       "publishedAt": "2025-08-07"

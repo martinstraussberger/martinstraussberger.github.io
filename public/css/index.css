@@ -56,6 +56,10 @@ i {
   color: var(--text-twilight);
 }
 
+a {
+  text-decoration: none;
+}
+
 .horizontal-line {
   color: var(--text-twilight);
   width: 80%;

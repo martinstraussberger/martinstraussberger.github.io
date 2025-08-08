@@ -1,4 +1,5 @@
 # Summary: Why This Exercise is Valuable
+![Dopamine Impact](./public/images/blog/neuroscience/embrace-ai-as-assistant.png)
 
 This two-step exercise is designed to transform how you interact with AI tools like Gemini or ChatGPT. Instead of treating them as simple search engines, you will establish a personalized, collaborative relationship. By clearly defining your role, objectives, and working style, you enable the AI to provide highly relevant, concrete, and actionable support. The exercise forces the AI to move beyond vague promises and identify its specific strengths, weaknesses, and limitations for your unique context. Ultimately, this process equips you with reusable prompts and a clear understanding of how to delegate tasks effectively, verify outputs, and integrate AI as a powerful, reliable assistant in your daily workflow.
 

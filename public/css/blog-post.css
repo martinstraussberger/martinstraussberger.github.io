@@ -10,11 +10,11 @@
 
 .blog-post-content {
     background: var(--blog-card-twilight);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
     border-radius: 12px;
     padding: 2.5rem;
-    margin: 3rem 0;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 4rem 0;
+    border: 1px solid var(--twilight);
 }
 
 /* ==========================================================================
@@ -23,7 +23,7 @@
 
 .blog-post-header {
     margin-bottom: 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--twilight);
     padding-bottom: 1.5rem;
 }
 
@@ -72,7 +72,7 @@
 
 .blog-post-body h2 {
     font-size: 1.8rem;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid var(--twilight);
     padding-bottom: 0.5rem;
 }
 
@@ -104,6 +104,25 @@
     border-radius: 4px;
     font-style: italic;
 }
+
+.blog-post-body .blog-image {
+    max-width: 800px;
+    max-height: 600px;
+    width: auto;
+    height: auto;
+    margin: 1.5rem auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+    .blog-post-body .blog-image {
+        max-width: 100%;
+    }
+}
+
 
 .blog-post-body code {
     background: rgba(255, 255, 255, 0.1);
@@ -149,10 +168,10 @@
 }
 
 .related-card {
-    background: var(--twilight);
+    background: var(--blog-card-twilight);
     border-radius: 8px;
     padding: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--twilight);
     transition: transform 0.2s ease;
 }
 
@@ -215,6 +234,12 @@
 
     .blog-post-body h2 {
         font-size: 1.5rem;
+    }
+
+    .blog-post-body .blog-image {
+        max-width: 100%;
+        max-height: none;
+        margin: 1rem auto;
     }
 
     .related-grid {

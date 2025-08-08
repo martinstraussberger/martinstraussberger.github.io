@@ -1,9 +1,11 @@
-**Understanding Dopamine and Anticipation**
+### Understanding Dopamine and Anticipation
+![Dopamine Impact](./public/images/blog/neuroscience/dopamine_impact.png)
 
 - Dopamine is primarily about anticipation rather than the actual reward; it motivates us to pursue goals.
 - Keeping expectations low can enhance the satisfaction of achieving rewards, creating a larger "reward prediction error."
 
 ### Factors Influencing Motivation
+
 - Anticipation, novelty, and curiosity are key drivers of motivation.
 - Pain and fear can diminish motivation, but embracing them can lead to growth and achievement.
 
