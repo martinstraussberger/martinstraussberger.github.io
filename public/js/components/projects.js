@@ -69,6 +69,7 @@ function renderProjectsPage() {
       </header>
       
       ${createCategoryFilter(currentCategory)}
+      ${window.UIComponents.BackToHome}
       
       <main class="blog-grid" role="main" aria-label="Project showcase">
         ${projects.length > 0
@@ -76,7 +77,6 @@ function renderProjectsPage() {
             : `<p class="no-posts">${projectsData.ui.noProjectsMessage}</p>`
         }
       </main>
-        ${window.UIComponents.BackToHome}
     </div>
   `;
 

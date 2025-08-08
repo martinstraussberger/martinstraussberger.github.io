@@ -10,8 +10,11 @@ class SimpleMarkdownParser {
       .replace(/^# (.*$)/gm, '<h1>$1</h1>')
       .replace(/^#### (.*$)/gm, '<h4>$1</h4>')
       
-      // Images - ![alt text](image path)
+      // Images - ![alt text](image path) - process before links
       .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="blog-image" />')
+      
+      // Links - [text](url) - process after images
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
       
       // Bold and italic
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')

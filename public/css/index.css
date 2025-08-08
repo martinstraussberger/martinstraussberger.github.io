@@ -15,6 +15,7 @@ body.dark-theme {
 
 body {
   --text-twilight: #000;
+  --text-dawn: #FF3D81;
   --twilight: #e9eaede0;
   --background-color: #fff;
 }
@@ -22,12 +23,14 @@ body {
 @media (prefers-color-scheme: light) {
   body {
     --text-twilight: #fff;
+    --text-dawn: #ff3d81ea;
     --twilight: #363636e0;
     --background-color: #000;
   }
 
   body.light-theme {
     --text-twilight: #222;
+    --text-dawn: #FF3D81;
     --twilight: #e9eaede0;
     --background-color: #fff;
     background-image: none;
@@ -58,6 +61,13 @@ i {
 
 a {
   text-decoration: none;
+  color: var(--text-dawn);
+  transition: opacity 0.2s ease;
+}
+
+a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
 }
 
 .horizontal-line {
@@ -100,7 +110,7 @@ a {
 /* ==========================================================================
   # Grid
    ========================================================================== */
-   
+
 .auto-grid {
   --auto-grid-min-size: 16rem;
 }
@@ -204,15 +214,13 @@ a {
   max-width: min(680px, 90vw);
   width: 100%;
   padding: 0 1rem;
-  text-align: center;
+  text-align: left;
 }
 
 .footer p {
   margin: 0;
   line-height: 1.6;
   font-size: 1.1rem;
-  text-align: left;
-  font-weight: 400;
 }
 
 /* ==========================================================================
