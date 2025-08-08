@@ -28,6 +28,37 @@
 }
 
 /* ==========================================================================
+   Image Optimization
+   ========================================================================== */
+
+.blog-image, .card-image, .project-image {
+    max-width: 100%;
+    height: auto;
+    /* Optimize image rendering */
+    image-rendering: optimizeQuality;
+    /* Smooth transitions */
+    transition: opacity 0.3s ease;
+}
+
+/* Card images specifically sized */
+.card-image {
+    width: 325px;
+    height: 325px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: var(--borderRadius-md);
+}
+
+/* Blog content images */
+.blog-image {
+    max-width: 800px;
+    height: auto;
+    margin: 1rem auto;
+    display: block;
+    border-radius: var(--borderRadius-md);
+}
+
+/* ==========================================================================
    Navigation Components
    ========================================================================== */
 

@@ -9,7 +9,7 @@
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/nereus-diving-2018",
       "githubUrl": null,
-      "image": "./public/images/projects/nereus_diving_preview.png"
+      "image": "./public/images/projects/nereus_diving_preview_optimized.png"
     },
     {
       "id": "diary-app",
@@ -20,7 +20,7 @@
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/diary-app/",
       "githubUrl": null,
-      "image": "./public/images/projects/diary_journal_preview.png"
+      "image": "./public/images/projects/diary_journal_preview_optimized.png"
     },
     {
       "id": "mern-fullstack",
@@ -31,7 +31,7 @@
       "featured": true,
       "projectUrl": "https://ms-mern.herokuapp.com",
       "githubUrl": null,
-      "image": "./public/images/projects/mern_stack.png"
+      "image": "./public/images/projects/mern_stack_optimized.png"
     },
     {
       "id": "redux-dashboard",
@@ -42,7 +42,7 @@
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/reduxdashboard",
       "githubUrl": null,
-      "image": "./public/images/projects/redux_preview.png"
+      "image": "./public/images/projects/redux_preview_optimized.png"
     },
     {
       "id": "react-d3-chart",
@@ -53,7 +53,7 @@
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/prototype-react-d3js-chart",
       "githubUrl": null,
-      "image": "./public/images/projects/health_d3js_preview.png"
+      "image": "./public/images/projects/health_d3js_preview_optimized.png"
     },
     {
       "id": "eeg-brainwave-analysis",
@@ -64,7 +64,7 @@
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/eegbrainwavebook",
       "githubUrl": null,
-      "image": "./public/images/projects/eeg_preview.png"
+      "image": "./public/images/projects/eeg_preview_optimized.png"
     },
     {
       "id": "health-calculator",
@@ -75,7 +75,7 @@
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/health-calculator-app/",
       "githubUrl": null,
-      "image": "./public/images/projects/bmi_calculator_preview.png"
+      "image": "./public/images/projects/bmi_calculator_preview_optimized.png"
     },
     {
       "id": "expanse-wallet",
@@ -86,7 +86,7 @@
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/expansewallet",
       "githubUrl": null,
-      "image": "./public/images/projects/expanse_wallet_preview.png"
+      "image": "./public/images/projects/expanse_wallet_preview_optimized.png"
     }
   ],
   "categories": {

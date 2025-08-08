@@ -8,7 +8,7 @@
       "markdownPath": "./public/markdown/blog/exploration-of-dopamine.md",
       "featured": true,
       "publishedAt": "2025-08-07",
-      "image": "./public/images/blog/neuroscience/dopamine_impact.png"
+      "image": "./public/images/blog/neuroscience/dopamine_impact_optimized.png"
 
     },
     {
@@ -19,7 +19,7 @@
       "markdownPath": "./public/markdown/blog/principles-of-goal-setting.md",
       "featured": true,
       "publishedAt": "2025-08-07",
-      "image": "./public/images/blog/neuroscience/goal-setting.png"
+      "image": "./public/images/blog/neuroscience/goal-setting_optimized.png"
 
     },
     {
@@ -30,7 +30,7 @@
       "markdownPath": "./public/markdown/blog/age-of-ai.md",
       "featured": true,
       "publishedAt": "2025-08-07",
-      "image": "./public/images/blog/neuroscience/embrace-ai-as-assistant.png"
+      "image": "./public/images/blog/neuroscience/embrace-ai-as-assistant_optimized.png"
     }
   ],
   "categories": {

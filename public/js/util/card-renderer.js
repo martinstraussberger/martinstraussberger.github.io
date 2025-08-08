@@ -73,7 +73,7 @@ function createUniversalCard(cardData) {
                         ${secondaryMeta ? `<time class="blog-date">${secondaryMeta}</time>` : ''}
                     </div>
                     <h2 id="card-${id}" class="blog-title">${title}</h2>
-                    ${image ? `<img src="${image}" alt="${title}" class="card-image" />` : ''}
+                    ${image ? `<img src="${image}" alt="${title}" class="card-image" loading="lazy" decoding="async" width="325" height="325" />` : ''}
                     <p class="blog-excerpt">${description}</p>
                     <div class="blog-footer">
                         ${footerLeft ? `<span class="blog-read-time">${footerLeft}</span>` : '<span></span>'}

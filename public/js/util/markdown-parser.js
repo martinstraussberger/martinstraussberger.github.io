@@ -11,7 +11,7 @@ class SimpleMarkdownParser {
       .replace(/^#### (.*$)/gm, '<h4>$1</h4>')
       
       // Images - ![alt text](image path) - process before links
-      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="blog-image" />')
+      .replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" class="blog-image" loading="lazy" decoding="async" />')
       
       // Links - [text](url) - process after images
       .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
