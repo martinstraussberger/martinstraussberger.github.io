@@ -23,6 +23,7 @@ function mapBlogPostToCard(post) {
             url: `./blog-post.html?post=${post.id}`,
             ariaLabel: `Read full article: ${post.title}`
         },
+        image: post.image,
         type: CARD_TYPES.BLOG
     };
 }
@@ -32,15 +33,16 @@ function mapProjectToCard(project) {
         id: project.id,
         title: project.title,
         description: project.description,
-        primaryMeta: 'MERN', // Placeholder as requested
-        secondaryMeta: null, // No date for projects
-        footerLeft: null, // No reading time for projects
+        primaryMeta: project.techStack,
+        secondaryMeta: null,
+        footerLeft: null,
         footerRight: {
             text: 'View Project →',
             url: project.projectUrl,
             ariaLabel: `View project: ${project.title}`,
             external: true
         },
+        image: project.image,
         type: CARD_TYPES.PROJECT
     };
 }
@@ -55,33 +57,30 @@ function createUniversalCard(cardData) {
         secondaryMeta,
         footerLeft,
         footerRight,
+        image,
         type
     } = cardData;
     
     return `
         <article class="blog-card" aria-labelledby="card-${id}">
-            <div class="blog-card-content">
-                <div class="blog-meta">
-                    <span class="blog-category contrast-darkMode">${primaryMeta}</span>
-                    ${secondaryMeta ? `<time class="blog-date">${secondaryMeta}</time>` : ''}
+            <a href="${footerRight.url}" 
+               class="blog-card-link"
+               ${footerRight.external ? 'target="_blank"' : ''}
+               aria-label="${footerRight.ariaLabel}">
+                <div class="blog-card-content">
+                    <div class="blog-meta">
+                        <span class="blog-category contrast-darkMode">${primaryMeta}</span>
+                        ${secondaryMeta ? `<time class="blog-date">${secondaryMeta}</time>` : ''}
+                    </div>
+                    <h2 id="card-${id}" class="blog-title">${title}</h2>
+                    ${image ? `<img src="${image}" alt="${title}" class="card-image" />` : ''}
+                    <p class="blog-excerpt">${description}</p>
+                    <div class="blog-footer">
+                        ${footerLeft ? `<span class="blog-read-time">${footerLeft}</span>` : '<span></span>'}
+                        <span class="blog-read-more">${footerRight.text}</span>
+                    </div>
                 </div>
-                <h2 id="card-${id}" class="blog-title">
-                    <a href="${footerRight.url}" 
-                       class="blog-title-link"
-                       ${footerRight.external ? 'target="_blank"' : ''}
-                       aria-label="${footerRight.ariaLabel}">${title}</a>
-                </h2>
-                <p class="blog-excerpt">${description}</p>
-                <div class="blog-footer">
-                    ${footerLeft ? `<span class="blog-read-time">${footerLeft}</span>` : '<span></span>'}
-                    <a href="${footerRight.url}" 
-                       class="blog-read-more" 
-                       ${footerRight.external ? 'target="_blank"' : ''}
-                       aria-label="${footerRight.ariaLabel}">
-                        ${footerRight.text}
-                    </a>
-                </div>
-            </div>
+            </a>
         </article>
     `;
 }

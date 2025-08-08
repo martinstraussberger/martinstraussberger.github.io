@@ -4,23 +4,23 @@
       "id": "nereus-diving",
       "title": "Nereus Diving",
       "description": "A diving center website showcasing underwater adventures and diving courses with a focus on user experience and visual storytelling.",
-      "techStack": "MERN",
+      "techStack": "Vanilla Javascript | PHP | HTML | CSS",
       "category": "web",
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/nereus-diving-2018",
       "githubUrl": null,
-      "image": "./public/images/projects/nereus-diving.jpg"
+      "image": "./public/images/projects/nereus_diving_preview.png"
     },
     {
       "id": "diary-app",
       "title": "Diary App",
       "description": "A personal diary application built with React and TypeScript, featuring secure authentication and rich text editing capabilities.",
-      "techStack": "MERN",
+      "techStack": "React | TypeScript | CSS",
       "category": "react",
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/diary-app/",
       "githubUrl": null,
-      "image": "./public/images/projects/diary-app.jpg"
+      "image": "./public/images/projects/diary_journal_preview.png"
     },
     {
       "id": "mern-fullstack",
@@ -31,62 +31,62 @@
       "featured": true,
       "projectUrl": "https://ms-mern.herokuapp.com",
       "githubUrl": null,
-      "image": "./public/images/projects/mern-app.jpg"
+      "image": "./public/images/projects/mern_stack.png"
     },
     {
       "id": "redux-dashboard",
       "title": "Redux Dashboard",
       "description": "A data visualization dashboard built with React and Redux, featuring dynamic charts, state management, and real-time updates.",
-      "techStack": "MERN",
+      "techStack": "React | Redux | TypeScript | Sheets",
       "category": "react",
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/reduxdashboard",
       "githubUrl": null,
-      "image": "./public/images/projects/redux-dashboard.jpg"
+      "image": "./public/images/projects/redux_preview.png"
     },
     {
       "id": "react-d3-chart",
       "title": "React & D3.js Chart",
       "description": "Interactive data visualization prototype combining React components with D3.js for creating dynamic and responsive charts.",
-      "techStack": "MERN",
+      "techStack": "React & D3.js",
       "category": "react",
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/prototype-react-d3js-chart",
       "githubUrl": null,
-      "image": "./public/images/projects/react-d3-chart.jpg"
+      "image": "./public/images/projects/health_d3js_preview.png"
     },
     {
       "id": "eeg-brainwave-analysis",
       "title": "Analyzing Brain Waves",
       "description": "Data science project analyzing EEG brainwave patterns using R, featuring statistical analysis and machine learning techniques.",
-      "techStack": "MERN",
+      "techStack": "Python | Jupyter Notebook | Data Science | EEG",
       "category": "data-science",
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/eegbrainwavebook",
       "githubUrl": null,
-      "image": "./public/images/projects/eeg-analysis.jpg"
+      "image": "./public/images/projects/eeg_preview.png"
     },
     {
       "id": "health-calculator",
       "title": "Health Calculation App",
       "description": "A Flutter mobile application for health calculations including BMI, calorie tracking, and fitness metrics with a clean, intuitive interface.",
-      "techStack": "MERN",
+      "techStack": "Flutter",
       "category": "flutter",
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/health-calculator-app/",
       "githubUrl": null,
-      "image": "./public/images/projects/health-calculator.jpg"
+      "image": "./public/images/projects/bmi_calculator_preview.png"
     },
     {
       "id": "expanse-wallet",
       "title": "Expanse Wallet",
       "description": "A cryptocurrency wallet application built with Flutter, featuring secure transaction handling and intuitive portfolio management.",
-      "techStack": "MERN",
+      "techStack": "Flutter",
       "category": "flutter",
       "featured": true,
       "projectUrl": "https://martinstraussberger.dev/expansewallet",
       "githubUrl": null,
-      "image": "./public/images/projects/expanse-wallet.jpg"
+      "image": "./public/images/projects/expanse_wallet_preview.png"
     }
   ],
   "categories": {

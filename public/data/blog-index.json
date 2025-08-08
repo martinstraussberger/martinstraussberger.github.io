@@ -7,7 +7,9 @@
       "category": "neuroscience",
       "markdownPath": "./public/markdown/blog/exploration-of-dopamine.md",
       "featured": true,
-      "publishedAt": "2025-08-07"
+      "publishedAt": "2025-08-07",
+      "image": "./public/images/blog/neuroscience/dopamine_impact.png"
+
     },
     {
       "id": "science-of-goal-setting",
@@ -16,16 +18,19 @@
       "category": "neuroscience",
       "markdownPath": "./public/markdown/blog/principles-of-goal-setting.md",
       "featured": true,
-      "publishedAt": "2025-08-07"
+      "publishedAt": "2025-08-07",
+      "image": "./public/images/blog/neuroscience/goal-setting.png"
+
     },
     {
       "id": "age-of-ai",
-      "title": "How to Make AI Your Personal Assistant",
+      "title": "Your Personal AI Assistant",
       "excerpt": "Explore the transformative impact of AI on society, the opportunities it creates, and the responsibilities we must embrace to shape a beneficial future.",
       "category": "ai",
       "markdownPath": "./public/markdown/blog/age-of-ai.md",
       "featured": true,
-      "publishedAt": "2025-08-07"
+      "publishedAt": "2025-08-07",
+      "image": "./public/images/blog/neuroscience/embrace-ai-as-assistant.png"
     }
   ],
   "categories": {

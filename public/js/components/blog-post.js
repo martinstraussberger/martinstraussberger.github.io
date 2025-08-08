@@ -39,13 +39,11 @@ function createRelatedPosts(relatedPosts) {
       <div class="related-grid">
         ${relatedPosts.map(post => `
           <article class="related-card">
-            <span class="related-category">${window.BlogService.getCategoryName(post.category)}</span>
-            <h4>
-              <a href="./blog-post.html?post=${post.id}" class="related-link">
-                ${post.title}
-              </a>
-            </h4>
-            <p class="related-excerpt">${post.excerpt}</p>
+            <a href="./blog-post.html?post=${post.id}" class="related-card-link" aria-label="Read article: ${post.title}">
+              <span class="related-category">${window.BlogService.getCategoryName(post.category)}</span>
+              <h4 class="related-title">${post.title}</h4>
+              <p class="related-excerpt">${post.excerpt}</p>
+            </a>
           </article>
         `).join('')}
       </div>

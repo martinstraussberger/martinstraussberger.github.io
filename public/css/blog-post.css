@@ -173,10 +173,24 @@
     padding: 1.5rem;
     border: 1px solid var(--twilight);
     transition: transform 0.2s ease;
+    cursor: pointer;
 }
 
 .related-card:hover {
     transform: translateY(-2px);
+}
+
+.related-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+.related-card-link:hover,
+.related-card-link:focus {
+    text-decoration: none;
+    color: inherit;
 }
 
 .related-category {
@@ -187,20 +201,12 @@
     letter-spacing: 0.5px;
 }
 
-.related-card h4 {
+.related-card h4,
+.related-title {
     margin: 0.75rem 0 0.5rem 0;
     font-size: 1.1rem;
     font-weight: 600;
-}
-
-.related-link {
     color: var(--text-twilight);
-    text-decoration: none;
-    transition: opacity 0.2s ease;
-}
-
-.related-link:hover {
-    opacity: 0.8;
 }
 
 .related-excerpt {
