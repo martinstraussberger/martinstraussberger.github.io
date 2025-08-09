@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <!-- script-src 'sha256-{navbar} sha256-{profile} sha256-{toggle} sha256-{footer}' 'strict-dynamic'; -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="
       default-src 'self'; 
       img-src 'self'; 
       child-src 'self'; 
@@ -17,64 +16,64 @@
       script-src 'unsafe-inline' 'self';
       script-src-elem 'unsafe-inline' 'self';
       object-src 'self';
-      base-uri 'none';"
-    />
-    <link el="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="msapplication-config" content="/browserconfig.xml" />
-    <meta name="msapplication-TileColor" content="#00000" />
-    <meta name="theme-color" content="#00000" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,500;1,600&display=swap"
-      rel="stylesheet"
-    />
-    
-    <!-- Performance: Preload critical resources -->
-    <link rel="preload" href="./public/css/variables.css" as="style" />
-    <link rel="preload" href="./public/css/index.css" as="style" />
-    <link rel="preload" href="./public/css/navbar.css" as="style" />
-    <link rel="preload" href="./public/js/url-router.js" as="script" />
-    <link rel="preload" href="./public/js/util/markdown-parser.js" as="script" />
-    
-    <!-- DNS prefetch for external resources -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
-    
-    <link rel="stylesheet" href="./public/css/variables.css" />
-    <link rel="stylesheet" href="./public/css/index.css" />
-    <link rel="stylesheet" href="./public/css/navbar.css" />
-    <link rel="stylesheet" href="./public/css/about.css" />
-    <link rel="stylesheet" href="./public/css/icons.css" />
-    <title>Martin Straussberger</title>
-  </head>
-  <body>
-    <!-- URL Router for clean URLs -->
-    <script src="./public/js/url-router.js"></script>
-    <!-- Load markdown parser first, before any components that depend on it -->
-    <script src="./public/js/util/markdown-parser.js"></script>
-    <script src="./public/js/util/blog-service.js"></script>
-    
-    <!-- Load components in dependency order -->
-    <script type="module" src="./public/js/components/navbar.js"></script>
-    <script type="module" src="./public/js/components/profile.js"></script>
-    <script src="./public/js/components/footer.js"></script>
+      base-uri 'none';" />
+  <link el="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#00000" />
+  <meta name="theme-color" content="#00000" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,500;1,600&display=swap"
+    rel="stylesheet" />
 
-    <main>
-      <section class="auto-grid _text" role="main" aria-label="Main content">
-        <nav id="navbar" role="navigation" aria-label="Main navigation"></nav>
-        <section id="profile" class="grid-item1 flex _title" role="banner" aria-label="Profile information"></section>
-        <footer id="footer" class="grid-item2 footer flex" role="contentinfo" aria-label="Site footer"></footer>
-      </section>
-    </main>
-  </body>
+  <!-- Performance: Preload critical resources -->
+  <link rel="preload" href="./public/css/variables.css" as="style" />
+  <link rel="preload" href="./public/css/index.css" as="style" />
+  <link rel="preload" href="./public/css/navbar.css" as="style" />
+  <link rel="preload" href="./public/js/url-router.js" as="script" />
+  <link rel="preload" href="./public/js/util/markdown-parser.js" as="script" />
+
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+  <link rel="stylesheet" href="./public/css/variables.css" />
+  <link rel="stylesheet" href="./public/css/index.css" />
+  <link rel="stylesheet" href="./public/css/navbar.css" />
+  <link rel="stylesheet" href="./public/css/about.css" />
+  <link rel="stylesheet" href="./public/css/icons.css" />
+  <title>Martin Straussberger</title>
+</head>
+
+<body>
+  <script src="./public/js/shared/script-loader.js"></script>
+  <script>
+    // Load index page scripts (blog service, markdown parser, url-router)
+    loadIndexPageScripts().then(() => {
+      console.log('Index page scripts loaded successfully');
+    }).catch(error => {
+      console.error('Error loading index page scripts:', error);
+    });
+  </script>
+
+  <!-- Page-specific components -->
+  <script type="module" src="./public/js/components/navbar.js"></script>
+  <script type="module" src="./public/js/components/profile.js"></script>
+  <script src="./public/js/components/footer.js"></script>
+
+  <main>
+    <section class="auto-grid _text" role="main" aria-label="Main content">
+      <nav id="navbar" role="navigation" aria-label="Main navigation"></nav>
+      <section id="profile" class="grid-item1 flex _title" role="banner" aria-label="Profile information"></section>
+      <footer id="footer" class="grid-item2 footer flex" role="contentinfo" aria-label="Site footer"></footer>
+    </section>
+  </main>
+</body>
+
 </html>

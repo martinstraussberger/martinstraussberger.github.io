@@ -14,10 +14,22 @@ const blogData = {
 // Category filter component
 function createCategoryFilter(currentCategory) {
     const categories = [
-        { key: null, name: 'All Articles' },
-        { key: 'neuroscience', name: 'Neuroscience & Leadership' },
-        { key: 'engineering', name: 'Software Engineering' },
-        { key: 'ai', name: 'The Age of AI' }
+      {
+        key: null,
+        name: 'All Articles',
+      },
+      {
+        key: 'neuroscience',
+        name: 'Neuroscience & Leadership',
+      },
+      {
+        key: 'engineering',
+        name: 'Software Engineering',
+      },
+      {
+        key: 'ai', 
+        name: 'The Age of AI',
+      }
     ];
 
     return `
@@ -75,7 +87,9 @@ function renderBlogPage() {
 
       <main class="blog-grid" role="main" aria-label="Blog articles">
         ${blogPosts.length > 0
-            ? window.CardRenderer.renderBlogPosts(blogPosts)
+      ? window.CardRenderer.renderBlogPosts(
+        blogPosts,
+      )
             : `<p class="no-posts">${blogData.ui.noPostsMessage}</p>`
         }
       </main>
@@ -97,14 +111,18 @@ window.addEventListener('DOMContentLoaded', async function () {
     }
 
     // Wait for required services to be available
-    let attempts = 0;
-    while ((!window.BlogService || !window.CardRenderer || !window.UIComponents) && attempts < 50) {
-        await new Promise(resolve => setTimeout(resolve, 10));
-        attempts++;
-    }
-
-    if (!window.BlogService || !window.CardRenderer || !window.UIComponents) {
-        console.error('Required services failed to initialize');
+    const servicesReady = await window.UIComponents.waitForServices(
+      [
+        'BlogService',
+        'CardRenderer',
+        'UIComponents',
+      ], 
+      {
+        context: 'Blog',
+      }
+    );
+    
+    if (!servicesReady) {
         return;
     }
 
@@ -122,4 +140,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     // Load and render content
     await loadBlogContent();
     renderBlogPage();
+    
+    // Initialize like system using shared utility
+    await window.UIComponents.initializeLikeSystem('Blog');
 });

@@ -7,10 +7,16 @@ const CARD_TYPES = {
 };
 
 // === Card Data Mappers ===
-function mapBlogPostToCard(post) {
-    const categoryName = window.BlogService.getCategoryName(post.category);
-    const formattedDate = window.BlogService.formatDate(post.publishedAt);
-    
+function mapBlogPostToCard(
+    post,
+) {
+    const categoryName = window.BlogService.getCategoryName(
+        post.category,
+    );
+    const formattedDate = window.BlogService.formatDate(
+        post.publishedAt,
+    );
+
     return {
         id: post.id,
         title: post.title,
@@ -28,7 +34,9 @@ function mapBlogPostToCard(post) {
     };
 }
 
-function mapProjectToCard(project) {
+function mapProjectToCard(
+    project,
+) {
     return {
         id: project.id,
         title: project.title,
@@ -48,7 +56,9 @@ function mapProjectToCard(project) {
 }
 
 // === Core Card Renderer ===
-function createUniversalCard(cardData) {
+function createUniversalCard(
+    cardData,
+) {
     const {
         id,
         title,
@@ -60,9 +70,9 @@ function createUniversalCard(cardData) {
         image,
         type
     } = cardData;
-    
+
     return `
-        <article class="blog-card" aria-labelledby="card-${id}">
+        <article class="blog-card" aria-labelledby="card-${id}" data-item-id="${id}">
             <a href="${footerRight.url}" 
                class="blog-card-link"
                ${footerRight.external ? 'target="_blank"' : ''}
@@ -78,6 +88,7 @@ function createUniversalCard(cardData) {
                     <div class="blog-footer">
                         ${footerLeft ? `<span class="blog-read-time">${footerLeft}</span>` : '<span></span>'}
                         <span class="blog-read-more">${footerRight.text}</span>
+                        <div class="like-button-container"></div>
                     </div>
                 </div>
             </a>
@@ -89,24 +100,28 @@ function createUniversalCard(cardData) {
 const CardRenderer = {
     // Main rendering functions
     renderBlogPost(post) {
-        const cardData = mapBlogPostToCard(post);
+        const cardData = mapBlogPostToCard(
+            post,
+        );
         return createUniversalCard(cardData);
     },
-    
+
     renderProject(project) {
-        const cardData = mapProjectToCard(project);
+        const cardData = mapProjectToCard(
+            project,
+        );
         return createUniversalCard(cardData);
     },
-    
+
     // Batch rendering functions
     renderBlogPosts(posts) {
         return posts.map(this.renderBlogPost).join('');
     },
-    
+
     renderProjects(projects) {
         return projects.map(this.renderProject).join('');
     },
-    
+
     // Type constants for external use
     CARD_TYPES
 };

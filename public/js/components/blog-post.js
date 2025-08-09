@@ -1,6 +1,6 @@
 const blogPostData = {
   navigation: {
-    homeUrl: "/", 
+    homeUrl: "/",
     blogUrl: "/blog",
     homeLabel: "Home",
     blogLabel: "Blog"
@@ -14,9 +14,13 @@ const blogPostData = {
 
 // Blog post metadata component
 function createPostMeta(post) {
-  const categoryName = window.BlogService.getCategoryName(post.category);
-  const formattedDate = window.BlogService.formatDate(post.publishedAt);
-  
+  const categoryName = window.BlogService.getCategoryName(
+    post.category,
+  );
+  const formattedDate = window.BlogService.formatDate(
+    post.publishedAt,
+  );
+
   return `
     <div class="blog-post-meta">
       <span class="blog-category contrast-darkMode">${categoryName}</span>
@@ -31,8 +35,14 @@ function createPostMeta(post) {
 
 // Related posts component  
 function createRelatedPosts(relatedPosts) {
-  if (!relatedPosts || relatedPosts.length === 0) return '';
-  
+  if (
+    !relatedPosts
+    ||
+    relatedPosts.length
+    ===
+    0
+  ) return '';
+
   return `
     <section class="related-posts" aria-labelledby="related-heading">
       <h3 id="related-heading">Related Articles</h3>
@@ -61,10 +71,10 @@ async function loadBlogPost() {
     console.error('BlogService not available');
     return;
   }
-  
+
   const params = window.BlogService.getUrlParams();
   const postId = params.post;
-  
+
   if (!postId) {
     console.error('No post ID provided');
     return;
@@ -72,14 +82,16 @@ async function loadBlogPost() {
 
   try {
     currentPost = await window.BlogService.getBlogPost(postId);
-    
+
     if (currentPost) {
       // Load related posts (same category, excluding current post)
-      const allPosts = await window.BlogService.getBlogPosts(currentPost.category);
+      const allPosts = await window.BlogService.getBlogPosts(
+        currentPost.category,
+      );
       relatedPosts = allPosts
         .filter(post => post.id !== postId)
         .slice(0, 2); // Show max 2 related posts
-      
+
       console.log(`Loaded blog post: ${currentPost.title}`);
     } else {
       console.error(`Blog post not found: ${postId}`);
@@ -100,7 +112,7 @@ function renderBlogPost() {
         </article>
       </div>
     `;
-    
+
     const blogPostElement = document.getElementById('blog-post');
     if (blogPostElement) {
       blogPostElement.innerHTML = NotFoundPage;
@@ -121,7 +133,9 @@ function renderBlogPost() {
         </div>
       </article>
       ${window.UIComponents.createBlogPostNavigation()}
-      ${createRelatedPosts(relatedPosts)}
+      ${createRelatedPosts(
+    relatedPosts,
+  )}
     </div>
   `;
 
@@ -138,19 +152,41 @@ window.addEventListener('DOMContentLoaded', async function () {
   if (!document.getElementById('blog-post')) {
     return;
   }
-  
-  // Wait for required services to be available
-  let attempts = 0;
-  while ((!window.BlogService || !window.UIComponents) && attempts < 50) {
-    await new Promise(resolve => setTimeout(resolve, 10));
-    attempts++;
+
+  // Wait for UIComponents to be available first
+  if (!window.UIComponents) {
+    console.log('UIComponents not available, waiting...');
+    // Simple polling mechanism to wait for UIComponents
+    const waitForUIComponents = () => {
+      return new Promise((resolve) => {
+        const checkUIComponents = () => {
+          if (window.UIComponents) {
+            resolve();
+          } else {
+            setTimeout(checkUIComponents, 50);
+          }
+        };
+        checkUIComponents();
+      });
+    };
+    await waitForUIComponents();
   }
-  
-  if (!window.BlogService || !window.UIComponents) {
-    console.error('Required services failed to initialize');
+
+  // Wait for required services to be available
+  const servicesReady = await window.UIComponents.waitForServices(
+    [
+      'BlogService',
+      'UIComponents',
+    ],
+    {
+      context: 'BlogPost',
+    }
+  );
+
+  if (!servicesReady) {
     return;
   }
-  
+
   // Show loading state
   const blogPostElement = document.getElementById('blog-post');
   if (blogPostElement) {
@@ -161,7 +197,7 @@ window.addEventListener('DOMContentLoaded', async function () {
       </div>
     `;
   }
-  
+
   // Load and render content
   await loadBlogPost();
   renderBlogPost();

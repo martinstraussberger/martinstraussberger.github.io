@@ -95,14 +95,18 @@ window.addEventListener('DOMContentLoaded', async function () {
     }
 
     // Wait for required services to be available
-    let attempts = 0;
-    while ((!window.ProjectsService || !window.CardRenderer || !window.UIComponents) && attempts < 50) {
-        await new Promise(resolve => setTimeout(resolve, 10));
-        attempts++;
-    }
-
-    if (!window.ProjectsService || !window.CardRenderer || !window.UIComponents) {
-        console.error('Required services failed to initialize');
+    const servicesReady = await window.UIComponents.waitForServices(
+      [
+        'ProjectsService',
+        'CardRenderer',
+        'UIComponents',
+      ], 
+      {
+        context: 'Projects',
+      }
+    );
+    
+    if (!servicesReady) {
         return;
     }
 
@@ -127,4 +131,7 @@ window.addEventListener('DOMContentLoaded', async function () {
     // Load and render content
     await loadProjectsContent();
     renderProjectsPage();
+    
+    // Initialize like system using shared utility
+    await window.UIComponents.initializeLikeSystem('Projects');
 });

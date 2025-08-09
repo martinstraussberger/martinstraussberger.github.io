@@ -7,9 +7,8 @@
       "category": "neuroscience",
       "markdownPath": "./public/markdown/blog/exploration-of-dopamine.md",
       "featured": true,
-      "publishedAt": "2025-08-07",
+      "publishedAt": "2025-08-08",
       "image": "./public/images/blog/neuroscience/dopamine_impact_optimized.png"
-
     },
     {
       "id": "science-of-goal-setting",
@@ -18,9 +17,8 @@
       "category": "neuroscience",
       "markdownPath": "./public/markdown/blog/principles-of-goal-setting.md",
       "featured": true,
-      "publishedAt": "2025-08-07",
+      "publishedAt": "2025-08-08",
       "image": "./public/images/blog/neuroscience/goal-setting_optimized.png"
-
     },
     {
       "id": "age-of-ai",
@@ -31,6 +29,16 @@
       "featured": true,
       "publishedAt": "2025-08-07",
       "image": "./public/images/blog/neuroscience/embrace-ai-as-assistant_optimized.png"
+    },
+    {
+      "id": "ai-perception-architecture",
+      "title": "AI's Perception of Architecture",
+      "excerpt": "Explore the transformative impact of AI on society, the opportunities it creates, and the responsibilities we must embrace to shape a beneficial future.",
+      "category": "ai",
+      "markdownPath": "./public/markdown/blog/ai-summary-of-web-project.md",
+      "featured": true,
+      "publishedAt": "2025-08-07",
+      "image": "./public/images/blog/ai/ai-perception-of-architecture.png"
     }
   ],
   "categories": {

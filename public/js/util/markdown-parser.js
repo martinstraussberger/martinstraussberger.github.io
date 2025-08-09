@@ -3,8 +3,33 @@
  */
 class SimpleMarkdownParser {
   static parse(markdown) {
-    let html = markdown
-      // Headers (process first to avoid line break issues)
+    // Step 1: Extract and protect code blocks
+    const codeBlocks = [];
+    let codeBlockIndex = 0;
+    
+    // Extract code blocks and replace with placeholders
+    let processedMarkdown = markdown.replace(/```(\w+)?\n([\s\S]*?)```/g, function(match, language, code) {
+      const placeholder = `__CODE_BLOCK_${codeBlockIndex}__`;
+      const lang = language ? ` class="language-${language}"` : '';
+      codeBlocks[codeBlockIndex] = `<pre><code${lang}>${SimpleMarkdownParser.escapeHtml(code.trim())}</code></pre>`;
+      codeBlockIndex++;
+      return placeholder;
+    });
+    
+    // Step 2: Extract and protect inline code
+    const inlineCodes = [];
+    let inlineCodeIndex = 0;
+    
+    processedMarkdown = processedMarkdown.replace(/`([^`]+)`/g, function(match, code) {
+      const placeholder = `__INLINE_CODE_${inlineCodeIndex}__`;
+      inlineCodes[inlineCodeIndex] = `<code class="inline-code">${SimpleMarkdownParser.escapeHtml(code)}</code>`;
+      inlineCodeIndex++;
+      return placeholder;
+    });
+    
+    // Step 3: Process regular markdown
+    let html = processedMarkdown
+      // Headers
       .replace(/^### (.*$)/gm, '<h3>$1</h3>')
       .replace(/^## (.*$)/gm, '<h2>$1</h2>')
       .replace(/^# (.*$)/gm, '<h1>$1</h1>')
@@ -28,6 +53,16 @@ class SimpleMarkdownParser {
       .replace(/\s*(<h[1-6]>)/g, ' $1')           // Clean spacing before headers
       .replace(/\n\n+/g, '<br>')                  // Multiple newlines become single break
       .replace(/\n/g, ' ');                       // Single newlines become spaces
+    
+    // Step 4: Reinsert code blocks (these preserve their original formatting)
+    codeBlocks.forEach((codeBlock, index) => {
+      html = html.replace(`__CODE_BLOCK_${index}__`, codeBlock);
+    });
+    
+    // Step 5: Reinsert inline code
+    inlineCodes.forEach((inlineCode, index) => {
+      html = html.replace(`__INLINE_CODE_${index}__`, inlineCode);
+    });
 
     // Wrap consecutive <li> elements in <ul> tags
     html = html.replace(/(<li>.*?<\/li>)(\s*<br>\s*<li>.*?<\/li>)*/g, function(match) {
@@ -38,6 +73,13 @@ class SimpleMarkdownParser {
     html = `<p class="p-biography">${html}</p>`;
     
     return html;
+  }
+
+  // Helper method to escape HTML entities
+  static escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
   }
 
   static async loadAndParse(filePath) {

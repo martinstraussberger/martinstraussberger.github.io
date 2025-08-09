@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="
       default-src 'self'; 
       img-src 'self'; 
       child-src 'self'; 
@@ -16,62 +15,63 @@
       script-src 'unsafe-inline' 'self';
       script-src-elem 'unsafe-inline' 'self';
       object-src 'self';
-      base-uri 'none';"
-    />
-    <link el="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <meta name="msapplication-config" content="/browserconfig.xml" />
-    <meta name="msapplication-TileColor" content="#00000" />
-    <meta name="theme-color" content="#00000" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-    
-    <!-- Performance: Preload critical resources -->
-    <link rel="preload" href="./public/css/variables.css" as="style" />
-    <link rel="preload" href="./public/css/index.css" as="style" />
-    <link rel="preload" href="./public/css/navbar.css" as="style" />
-    <link rel="preload" href="./public/css/blog.css" as="style" />
-    <link rel="preload" href="./public/js/url-router.js" as="script" />
-    <link rel="preload" href="./public/js/util/projects-service.js" as="script" />
-    <link rel="preload" href="./public/data/projects-index.json" as="fetch" crossorigin />
-    
-    <!-- DNS prefetch for external resources -->
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
-    
-    <link rel="stylesheet" href="./public/css/variables.css" />
-    <link rel="stylesheet" href="./public/css/index.css" />
-    <link rel="stylesheet" href="./public/css/navbar.css" />
-    <link rel="stylesheet" href="./public/css/blog.css" />
-    <link rel="stylesheet" href="./public/css/icons.css" />
-    <title>Projects - Martin Straussberger</title>
-  </head>
-  <body class="about-body">
-    <!-- URL Router for clean URLs -->
-    <script src="./public/js/url-router.js"></script>
-    <!-- Load utilities first -->
-    <script src="./public/js/util/projects-service.js"></script>
-    <script src="./public/js/util/card-renderer.js"></script>
-    <script src="./public/js/util/ui-components.js"></script>
-    
-    <!-- Load components -->
-    <script type="module" src="./public/js/components/navbar.js"></script>
-    <script src="./public/js/components/projects.js"></script>
+      connect-src 'self' https://fnnstbchphhygwqsviwl.supabase.co;
+      base-uri 'none';" />
+  <link el="shortcut icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+  <meta name="msapplication-TileColor" content="#00000" />
+  <meta name="theme-color" content="#00000" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
 
-    <main>
-      <nav id="navbar" role="navigation" aria-label="Main navigation"></nav>
-      <section id="projects" role="main" aria-label="Project showcase"></section>
-    </main>
-  </body>
+  <!-- Performance: Preload critical resources -->
+  <link rel="preload" href="./public/css/variables.css" as="style" />
+  <link rel="preload" href="./public/css/index.css" as="style" />
+  <link rel="preload" href="./public/css/navbar.css" as="style" />
+  <link rel="preload" href="./public/css/blog.css" as="style" />
+  <link rel="preload" href="./public/js/url-router.js" as="script" />
+  <link rel="preload" href="./public/js/util/projects-service.js" as="script" />
+  <link rel="preload" href="./public/data/projects-index.json" as="fetch" crossorigin />
+
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+  <link rel="stylesheet" href="./public/css/variables.css" />
+  <link rel="stylesheet" href="./public/css/index.css" />
+  <link rel="stylesheet" href="./public/css/navbar.css" />
+  <link rel="stylesheet" href="./public/css/blog.css" />
+  <link rel="stylesheet" href="./public/css/icons.css" />
+  <title>Projects - Martin Straussberger</title>
+</head>
+
+<body class="about-body">
+  <script src="./public/js/shared/script-loader.js"></script>
+  <script>
+    // Load all projects page scripts
+    loadProjectsPageScripts().then(() => {
+      console.log('Projects page scripts loaded successfully');
+    }).catch(error => {
+      console.error('Error loading projects page scripts:', error);
+    });
+  </script>
+
+  <!-- Page-specific components -->
+  <script type="module" src="./public/js/components/navbar.js"></script>
+  <script src="./public/js/components/projects.js"></script>
+
+  <main>
+    <nav id="navbar" role="navigation" aria-label="Main navigation"></nav>
+    <section id="projects" role="main" aria-label="Project showcase"></section>
+  </main>
+</body>
+
 </html>

@@ -16,6 +16,7 @@ Include the following:
 
 **Here’s an example:**
 
+```md
 > I’m Sam, a Product Manager for a B2B SaaS platform.
 >
 > * **Responsibilities:** I set the product roadmap, write specifications, align with engineering and design teams, and ensure we ship features on time.
@@ -27,6 +28,7 @@ Include the following:
 > * **Constraints:** We primarily use Jira, Figma, and Mixpanel. All outputs must be GDPR-compliant, and we currently have limited design bandwidth.
 >
 > Nice to meet you. Wait for further instructions.
+```
 
 ## Step 2: Get to Know the Model
 

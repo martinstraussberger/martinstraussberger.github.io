@@ -3,8 +3,22 @@
   "version": "1.0.0", 
   "description": "Personal portfolio website",
   "scripts": {
+    "dev": "python3 dev-server.py",
+    "server": "python3 dev-server.py",
+    "pyserver": "python3 dev-server.py",
+    
+    "blog:update-dates": "node scripts/update-blog-dates.js",
+    "blog:update": "npm run blog:update-dates",
     "update-blog-dates": "node scripts/update-blog-dates.js",
-    "pyserver": "python3 -m http.server 8000",
-    "optimize-images": "node scripts/resize-images.js"
+    
+    "images:optimize": "node scripts/resize-images.js",
+    "optimize-images": "node scripts/resize-images.js",
+    
+    "blog:validate": "node scripts/validate-blog.js",
+    "blog:add": "node scripts/add-blog-post.js",
+    "setup": "npm run images:optimize && npm run blog:update-dates",
+    
+    "lint:blog": "node scripts/lint-blog-data.js",
+    "build:prepare": "npm run images:optimize && npm run blog:update-dates && npm run blog:validate"
   }
 }
