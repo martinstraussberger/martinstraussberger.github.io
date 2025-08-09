@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Debug Console</title>
+    <style>
+        body { font-family: monospace; margin: 20px; background: #1a1a1a; color: #00ff00; }
+        .console { background: black; padding: 20px; border-radius: 8px; height: 400px; overflow-y: auto; }
+        .log { margin: 2px 0; }
+        .error { color: #ff4444; }
+        .success { color: #44ff44; }
+        .info { color: #4444ff; }
+        #skills-container { background: white; color: black; margin: 20px 0; min-height: 300px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Skills Debug Console</h1>
+    
+    <div class="console" id="console"></div>
+    
+    <div id="skills-container"></div>
+
+    <script src="./public/js/util/skills-service.js"></script>
+    <script src="./public/js/util/simple-skills-viz.js"></script>
+    
+    <script>
+        const consoleDiv = document.getElementById('console');
+        
+        function addLog(message, type = 'log') {
+            const div = document.createElement('div');
+            div.className = `log ${type}`;
+            div.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
+            consoleDiv.appendChild(div);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+        }
+        
+        // Override console methods to capture output
+        const originalLog = console.log;
+        const originalError = console.error;
+        const originalWarn = console.warn;
+        
+        console.log = (...args) => {
+            originalLog(...args);
+            addLog(args.join(' '), 'success');
+        };
+        
+        console.error = (...args) => {
+            originalError(...args);
+            addLog(args.join(' '), 'error');
+        };
+        
+        console.warn = (...args) => {
+            originalWarn(...args);
+            addLog(args.join(' '), 'info');
+        };
+        
+        // Capture uncaught errors
+        window.addEventListener('error', (e) => {
+            addLog(`Uncaught Error: ${e.message} at ${e.filename}:${e.lineno}`, 'error');
+        });
+        
+        window.addEventListener('unhandledrejection', (e) => {
+            addLog(`Unhandled Promise Rejection: ${e.reason}`, 'error');
+        });
+        
+        async function runDebugTest() {
+            try {
+                addLog('🚀 Starting comprehensive debug test...', 'info');
+                
+                addLog('1. Checking window object...', 'info');
+                addLog(`SkillsService: ${typeof window.SkillsService}`, 'log');
+                addLog(`SimpleSkillsVisualization: ${typeof window.SimpleSkillsVisualization}`, 'log');
+                
+                if (!window.SkillsService) {
+                    throw new Error('SkillsService not found in window object');
+                }
+                
+                if (!window.SimpleSkillsVisualization) {
+                    throw new Error('SimpleSkillsVisualization not found in window object');
+                }
+                
+                addLog('2. Testing data loading...', 'info');
+                const data = await window.SkillsService.loadSkillsData();
+                addLog(`Data loaded: ${JSON.stringify(data).substring(0, 100)}...`, 'log');
+                
+                addLog('3. Creating visualization...', 'info');
+                const viz = new window.SimpleSkillsVisualization('skills-container');
+                
+                addLog('4. Initializing visualization...', 'info');
+                await viz.init();
+                
+                addLog('🎉 Test completed successfully!', 'success');
+                
+            } catch (error) {
+                addLog(`💥 Test failed: ${error.message}`, 'error');
+                addLog(`Stack: ${error.stack}`, 'error');
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', runDebugTest);
+    </script>
+</body>
+</html>

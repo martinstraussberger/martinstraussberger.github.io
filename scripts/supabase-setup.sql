@@ -42,7 +42,7 @@ INSERT INTO likes (item_id, like_count) VALUES
     ('exploration-of-dopamine', 0),
     ('science-of-goal-setting', 0),
     ('age-of-ai', 0),
-    ('ai-perception-architecture', 0)
+    ('ai-perception-architecture', 0),
     ('nereus-diving', 0),
     ('diary-app', 0),
     ('mern-fullstack', 0),

@@ -9,6 +9,7 @@
         '/blog': '/blog.html',
         '/projects': '/projects.html', 
         '/about': '/about.html',
+        '/skills': '/skills.html',
         '/blog-post': '/blog-post.html'
     };
     

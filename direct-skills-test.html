@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Simple Skills Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f0f0f0; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        #skills-container { background: white; border-radius: 8px; min-height: 400px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Direct Simple Skills Test</h1>
+        <div id="skills-container"></div>
+    </div>
+
+    <script src="./public/js/util/skills-service.js"></script>
+    <script src="./public/js/util/simple-skills-viz.js"></script>
+    
+    <script>
+        async function test() {
+            try {
+                console.log('Starting direct test...');
+                
+                // Check services
+                if (!window.SkillsService) throw new Error('SkillsService missing');
+                if (!window.SimpleSkillsVisualization) throw new Error('SimpleSkillsVisualization missing');
+                
+                console.log('Services available, creating visualization...');
+                const viz = new window.SimpleSkillsVisualization('skills-container');
+                
+                console.log('Initializing...');
+                await viz.init();
+                
+                console.log('✅ SUCCESS!');
+            } catch (error) {
+                console.error('❌ FAILED:', error);
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', test);
+    </script>
+</body>
+</html>

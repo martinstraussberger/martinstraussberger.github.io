@@ -74,6 +74,17 @@ class ScriptLoader {
         return this.loadScripts(projectScripts);
     }
 
+    // Skills utilities
+    async loadSkillsUtilities() {
+        const skillsScripts = [
+            './public/js/util/skills-service.js',
+            './public/js/util/enhanced-skills-radar.js',
+            './public/js/util/skills-visualization.js'
+        ];
+        
+        return this.loadScripts(skillsScripts);
+    }
+
     // Common toggle functionality
     async loadToggleUtilities() {
         const toggleScripts = [
@@ -122,6 +133,14 @@ class ScriptLoader {
             this.loadBlogUtilities()
         ]);
     }
+
+    async loadSkillsPageScripts() {
+        await Promise.all([
+            this.loadCoreUtilities(),
+            this.loadBlogUtilities(),
+            this.loadSkillsUtilities()
+        ]);
+    }
 }
 
 // Create global instance
@@ -133,3 +152,4 @@ window.loadProjectsPageScripts = () => window.scriptLoader.loadProjectsPageScrip
 window.loadBlogPostPageScripts = () => window.scriptLoader.loadBlogPostPageScripts();
 window.loadIndexPageScripts = () => window.scriptLoader.loadIndexPageScripts();
 window.loadAboutPageScripts = () => window.scriptLoader.loadAboutPageScripts();
+window.loadSkillsPageScripts = () => window.scriptLoader.loadSkillsPageScripts();

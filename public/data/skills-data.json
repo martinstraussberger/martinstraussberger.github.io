@@ -1,0 +1,226 @@
+{
+  "skillCategories": [
+    {
+      "id": "frontend",
+      "name": "Frontend Development",
+      "color": "#3B82F6",
+      "icon": "🎨",
+      "skills": [
+        {
+          "name": "React",
+          "level": 9,
+          "yearsOfExperience": 4,
+          "description": "Advanced React development with hooks, context, and modern patterns",
+          "projects": ["redux-dashboard", "react-d3-chart", "diary-app"]
+        },
+        {
+          "name": "JavaScript",
+          "level": 9,
+          "yearsOfExperience": 5,
+          "description": "Expert in ES6+, async programming, and modern JavaScript patterns",
+          "projects": ["mern-fullstack", "redux-dashboard", "react-d3-chart"]
+        },
+        {
+          "name": "TypeScript",
+          "level": 8,
+          "yearsOfExperience": 3,
+          "description": "Strong typing, interfaces, and advanced TypeScript patterns",
+          "projects": ["redux-dashboard"]
+        },
+        {
+          "name": "CSS/SCSS",
+          "level": 8,
+          "yearsOfExperience": 5,
+          "description": "Modern CSS, Flexbox, Grid, animations, and responsive design",
+          "projects": ["portfolio-website"]
+        },
+        {
+          "name": "HTML5",
+          "level": 9,
+          "yearsOfExperience": 5,
+          "description": "Semantic HTML, accessibility, and modern web standards",
+          "projects": ["portfolio-website"]
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "name": "Backend Development",
+      "color": "#10B981",
+      "icon": "⚙️",
+      "skills": [
+        {
+          "name": "Node.js",
+          "level": 8,
+          "yearsOfExperience": 4,
+          "description": "Server-side JavaScript, Express.js, and RESTful APIs",
+          "projects": ["mern-fullstack"]
+        },
+        {
+          "name": "Python",
+          "level": 9,
+          "yearsOfExperience": 6,
+          "description": "Advanced Python for data science, web development, and automation",
+          "projects": ["eeg-brainwave-analysis", "health-calculator"]
+        },
+        {
+          "name": "RESTful APIs",
+          "level": 8,
+          "yearsOfExperience": 4,
+          "description": "API design, implementation, and best practices",
+          "projects": ["mern-fullstack"]
+        },
+        {
+          "name": "Database Design",
+          "level": 7,
+          "yearsOfExperience": 4,
+          "description": "SQL, NoSQL, and database optimization",
+          "projects": ["mern-fullstack", "diary-app"]
+        }
+      ]
+    },
+    {
+      "id": "data-ai",
+      "name": "Data Science & AI",
+      "color": "#8B5CF6",
+      "icon": "🤖",
+      "skills": [
+        {
+          "name": "Machine Learning",
+          "level": 8,
+          "yearsOfExperience": 3,
+          "description": "ML algorithms, model training, and data analysis",
+          "projects": ["eeg-brainwave-analysis"]
+        },
+        {
+          "name": "Data Visualization",
+          "level": 9,
+          "yearsOfExperience": 4,
+          "description": "D3.js, charts, and interactive data representations",
+          "projects": ["react-d3-chart", "eeg-brainwave-analysis"]
+        },
+        {
+          "name": "Data Analysis",
+          "level": 8,
+          "yearsOfExperience": 4,
+          "description": "Statistical analysis, data processing, and insights extraction",
+          "projects": ["eeg-brainwave-analysis", "health-calculator"]
+        },
+        {
+          "name": "AI/LLM Integration",
+          "level": 7,
+          "yearsOfExperience": 2,
+          "description": "Large Language Models, prompt engineering, and AI workflows",
+          "projects": ["ai-blog-content"]
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "name": "Mobile Development",
+      "color": "#F59E0B",
+      "icon": "📱",
+      "skills": [
+        {
+          "name": "Flutter",
+          "level": 7,
+          "yearsOfExperience": 2,
+          "description": "Cross-platform mobile development with Dart and Flutter",
+          "projects": ["nereus-diving", "expanse-wallet"]
+        },
+        {
+          "name": "Dart",
+          "level": 7,
+          "yearsOfExperience": 2,
+          "description": "Dart programming language for Flutter development",
+          "projects": ["nereus-diving", "expanse-wallet"]
+        },
+        {
+          "name": "Mobile UI/UX",
+          "level": 8,
+          "yearsOfExperience": 2,
+          "description": "Mobile-first design, responsive layouts, and user experience",
+          "projects": ["nereus-diving", "expanse-wallet"]
+        }
+      ]
+    },
+    {
+      "id": "leadership",
+      "name": "Leadership & Soft Skills",
+      "color": "#EF4444",
+      "icon": "👥",
+      "skills": [
+        {
+          "name": "Team Leadership",
+          "level": 8,
+          "yearsOfExperience": 4,
+          "description": "Leading development teams, mentoring, and project management",
+          "projects": ["team-management"]
+        },
+        {
+          "name": "Technical Writing",
+          "level": 9,
+          "yearsOfExperience": 5,
+          "description": "Documentation, blog writing, and technical communication",
+          "projects": ["blog-articles", "technical-documentation"]
+        },
+        {
+          "name": "Problem Solving",
+          "level": 9,
+          "yearsOfExperience": 6,
+          "description": "Analytical thinking, debugging, and solution architecture",
+          "projects": ["all-projects"]
+        },
+        {
+          "name": "Communication",
+          "level": 8,
+          "yearsOfExperience": 6,
+          "description": "Cross-functional collaboration and stakeholder management",
+          "projects": ["team-collaboration"]
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "name": "Tools & DevOps",
+      "color": "#6B7280",
+      "icon": "🛠️",
+      "skills": [
+        {
+          "name": "Git/GitHub",
+          "level": 9,
+          "yearsOfExperience": 5,
+          "description": "Version control, branching strategies, and collaboration workflows",
+          "projects": ["all-projects"]
+        },
+        {
+          "name": "VS Code",
+          "level": 9,
+          "yearsOfExperience": 5,
+          "description": "Advanced IDE usage, extensions, and development workflows",
+          "projects": ["all-projects"]
+        },
+        {
+          "name": "Supabase",
+          "level": 7,
+          "yearsOfExperience": 1,
+          "description": "Backend-as-a-Service, real-time databases, and authentication",
+          "projects": ["like-system", "portfolio-website"]
+        },
+        {
+          "name": "Performance Optimization",
+          "level": 8,
+          "yearsOfExperience": 3,
+          "description": "Web performance, image optimization, and loading strategies",
+          "projects": ["portfolio-website"]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "totalSkills": 23,
+    "totalYearsExperience": 6,
+    "specialties": ["Full-Stack Development", "Data Visualization", "Team Leadership"],
+    "currentFocus": ["AI/ML Integration", "Advanced React Patterns", "Performance Optimization"]
+  }
+}

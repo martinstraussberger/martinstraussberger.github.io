@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .test-section { margin: 20px 0; padding: 15px; border: 1px solid #ccc; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        #skills-viz-container { border: 2px solid #007bff; min-height: 400px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Skills Visualization Test</h1>
+        
+        <div class="test-section">
+            <h2>Script Loading Test</h2>
+            <div id="script-status"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Data Loading Test</h2>
+            <div id="data-status"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Visualization Container</h2>
+            <div id="skills-viz-container"></div>
+        </div>
+
+        <div class="test-section">
+            <h2>Debug Information</h2>
+            <div id="debug-info"></div>
+        </div>
+    </div>
+
+    <script src="./public/js/shared/script-loader.js"></script>
+    <script>
+        const log = (message, isError = false) => {
+            console.log(message);
+            const debugInfo = document.getElementById('debug-info');
+            const div = document.createElement('div');
+            div.className = isError ? 'status error' : 'status success';
+            div.textContent = `${new Date().toLocaleTimeString()}: ${message}`;
+            debugInfo.appendChild(div);
+        };
+
+        async function testScriptLoading() {
+            try {
+                log('Starting script loading test...');
+                
+                if (typeof loadSkillsPageScripts === 'undefined') {
+                    throw new Error('loadSkillsPageScripts function not available');
+                }
+                
+                await loadSkillsPageScripts();
+                log('✅ Scripts loaded successfully');
+                
+                // Test if services are available
+                if (window.SkillsService) {
+                    log('✅ SkillsService is available');
+                } else {
+                    log('❌ SkillsService is NOT available', true);
+                }
+                
+                if (window.SkillsVisualization) {
+                    log('✅ SkillsVisualization is available');
+                } else {
+                    log('❌ SkillsVisualization is NOT available', true);
+                }
+                
+                return true;
+            } catch (error) {
+                log(`❌ Script loading failed: ${error.message}`, true);
+                return false;
+            }
+        }
+
+        async function testDataLoading() {
+            try {
+                log('Starting data loading test...');
+                
+                if (!window.SkillsService) {
+                    throw new Error('SkillsService not available');
+                }
+                
+                const data = await window.SkillsService.loadSkillsData();
+                log('✅ Data loaded successfully');
+                log(`📊 Found ${data.skillCategories?.length || 0} skill categories`);
+                log(`🎯 Total skills: ${data.skillCategories?.reduce((total, cat) => total + (cat.skills?.length || 0), 0) || 0}`);
+                
+                return data;
+            } catch (error) {
+                log(`❌ Data loading failed: ${error.message}`, true);
+                return null;
+            }
+        }
+
+        async function testVisualization() {
+            try {
+                log('Starting visualization test...');
+                
+                if (!window.SkillsVisualization) {
+                    throw new Error('SkillsVisualization not available');
+                }
+                
+                const container = document.getElementById('skills-viz-container');
+                if (!container) {
+                    throw new Error('Container not found');
+                }
+                
+                log('Creating SkillsVisualization instance...');
+                const viz = new window.SkillsVisualization('skills-viz-container');
+                
+                log('Initializing visualization...');
+                await viz.init();
+                
+                log('✅ Visualization initialized successfully');
+                return viz;
+            } catch (error) {
+                log(`❌ Visualization failed: ${error.message}`, true);
+                console.error('Visualization error details:', error);
+                return null;
+            }
+        }
+
+        // Run tests when page loads
+        window.addEventListener('DOMContentLoaded', async () => {
+            log('🚀 Starting comprehensive skills test...');
+            
+            const scriptsLoaded = await testScriptLoading();
+            if (!scriptsLoaded) return;
+            
+            const data = await testDataLoading();
+            if (!data) return;
+            
+            const viz = await testVisualization();
+            if (viz) {
+                log('🎉 All tests passed! Skills visualization is working.');
+            } else {
+                log('💥 Visualization test failed.', true);
+            }
+        });
+    </script>
+</body>
+</html>

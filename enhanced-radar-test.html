@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Radar Chart Test</title>
+    <link rel="stylesheet" href="./public/css/variables.css" />
+    <link rel="stylesheet" href="./public/css/skills.css" />
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            margin: 0; 
+            padding: 20px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        #radar-container { 
+            min-height: 600px; 
+            padding: 2rem;
+        }
+        .header {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        .header p {
+            margin: 0.5rem 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 Enhanced Skills Radar</h1>
+            <p>Interactive visualization with modern UX/UI design</p>
+        </div>
+        <div id="radar-container"></div>
+    </div>
+
+    <script src="./public/js/util/skills-service.js"></script>
+    <script src="./public/js/util/enhanced-skills-radar.js"></script>
+    
+    <script>
+        async function initEnhancedRadar() {
+            try {
+                console.log('🚀 Initializing Enhanced Skills Radar...');
+                
+                if (!window.SkillsService || !window.EnhancedSkillsRadar) {
+                    throw new Error('Required components not loaded');
+                }
+                
+                const radar = new window.EnhancedSkillsRadar('radar-container', {
+                    width: 700,
+                    height: 700,
+                    animationDuration: 1500,
+                    interactive: true,
+                    theme: 'modern'
+                });
+                
+                await radar.init();
+                console.log('✅ Enhanced Radar initialized successfully!');
+                
+            } catch (error) {
+                console.error('❌ Failed to initialize:', error);
+                document.getElementById('radar-container').innerHTML = `
+                    <div style="text-align: center; padding: 3rem; color: #dc2626;">
+                        <h2>⚠️ Loading Error</h2>
+                        <p>${error.message}</p>
+                        <button onclick="location.reload()" style="padding: 0.75rem 1.5rem; background: #3b82f6; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                            Retry
+                        </button>
+                    </div>
+                `;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', initEnhancedRadar);
+    </script>
+</body>
+</html>

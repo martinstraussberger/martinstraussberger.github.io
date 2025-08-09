@@ -24,6 +24,9 @@ const Navbar = `
         <a class="nav-links upperCase" href="/about">About</a>
       </li>
       <li style="padding: 0 0 0 0">
+        <a class="nav-links upperCase" href="/skills">Skills</a>
+      </li>
+      <li style="padding: 0 0 0 0">
         <a class="nav-links upperCase" href="/projects">Projects</a>
       </li>
       <li style="padding: 0 0 0 0">

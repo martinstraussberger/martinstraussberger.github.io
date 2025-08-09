@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Skills Test</title>
+    <link rel="stylesheet" href="./public/css/variables.css" />
+    <link rel="stylesheet" href="./public/css/skills.css" />
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        #skills-viz-container { 
+            background: white; 
+            border: 2px solid #007bff; 
+            min-height: 400px; 
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .loading { text-align: center; padding: 40px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Skills Visualization Test</h1>
+        <div id="skills-viz-container">
+            <div class="loading">🔄 Loading...</div>
+        </div>
+    </div>
+
+    <!-- Load scripts in order -->
+    <script src="./public/js/util/skills-service.js"></script>
+    <script src="./public/js/util/skills-visualization.js"></script>
+    
+    <script>
+        console.log('Starting simple skills test...');
+        
+        async function runTest() {
+            try {
+                console.log('1. Checking if services are available...');
+                
+                if (!window.SkillsService) {
+                    throw new Error('SkillsService not available');
+                }
+                console.log('✅ SkillsService is available');
+                
+                if (!window.SkillsVisualization) {
+                    throw new Error('SkillsVisualization not available');
+                }
+                console.log('✅ SkillsVisualization is available');
+                
+                console.log('2. Loading skills data...');
+                const data = await window.SkillsService.loadSkillsData();
+                console.log('✅ Data loaded:', data);
+                
+                console.log('3. Creating visualization...');
+                const container = document.getElementById('skills-viz-container');
+                if (!container) {
+                    throw new Error('Container not found');
+                }
+                
+                const viz = new window.SkillsVisualization('skills-viz-container');
+                console.log('✅ Visualization instance created:', viz);
+                
+                console.log('4. Initializing visualization...');
+                await viz.init();
+                
+                console.log('🎉 SUCCESS! Visualization should now be visible.');
+                
+            } catch (error) {
+                console.error('❌ Test failed:', error);
+                const container = document.getElementById('skills-viz-container');
+                if (container) {
+                    container.innerHTML = `
+                        <div style="color: red; text-align: center; padding: 40px;">
+                            <h3>Test Failed</h3>
+                            <p>${error.message}</p>
+                            <p>Check console for details</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+        
+        // Run test when DOM is ready
+        document.addEventListener('DOMContentLoaded', runTest);
+    </script>
+</body>
+</html>
