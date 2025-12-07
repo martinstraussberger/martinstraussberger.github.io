@@ -88,6 +88,17 @@
       "githubUrl": null,
       "image": "./public/images/projects/expanse_wallet_preview_optimized.png"
     }
+        {
+      "id": "cali-success",
+      "title": "Cali Success App",
+      "description": "",
+      "techStack": "Vanilla JS",
+      "category": "Web App 2D Game",
+      "featured": true,
+      "projectUrl": "https://martinstraussberger.dev/cali-success",
+      "githubUrl": null,
+      "image": ""
+    }
   ],
   "categories": {
     "web": {
